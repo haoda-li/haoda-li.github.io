@@ -22,7 +22,8 @@
                     <img class="navbar-logo navbar-logo-light" src="./assets/images/logo.png" alt="Logo">
                     <img class="navbar-logo navbar-logo-dark" src="./assets/images/logo.png" alt="Logo">
                 </a>
-
+                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="burger"><span></span></span>
+                </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav align-items-center mr-auto">
                         <li class="nav-item">
@@ -63,8 +64,8 @@
                     <p class="lead">Computer Science and Data Science @ U of Toronto</p>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a onclick="switch_sec('project')">Projects</a></li>
                             <li class="breadcrumb-item"><a onclick="switch_sec('profile')">Profile</a></li>
+                            <li class="breadcrumb-item"><a onclick="switch_sec('project')">Projects</a></li>
                             <li class="breadcrumb-item"><a href="/notebook/index.html">Notes</a></li>
                         </ol>
                     </nav>
@@ -73,7 +74,7 @@
         </div>
     </section>
 
-    <section class="bg-white sec" id="project">
+    <section class="bg-white sec" id="project" style="display: none">
         <div class="container">
             <div class="row" data-aos="fade-up" data-aos-delay="100">
                 <div class="col">
@@ -282,14 +283,14 @@
         </div>
     </section>
 
-    <section class="bg-white sec" id="profile" style="display: none">
+    <section class="bg-white sec" id="profile">
         <div class="container">
             <div class="row" data-aos="fade-up">
                 <div class="col">
                     <h2 class="line-spacing text-decorated"><b>Profile</b> &nbsp;&nbsp;&nbsp;
-                        <button type="button" class="btn btn-md btn-facebook" onclick=" window.open('assets/resume.pdf', '_blank')">
+                        <!--<button type="button" class="btn btn-md btn-facebook" onclick=" window.open('assets/resume.pdf', '_blank')">
                           Resume
-                        </button>
+                        </button>-->
                         <button type="button" class="btn btn-md btn-primary" onclick=" window.open('assets/cv.pdf', '_blank')">
                           Curriculum Vitae
                         </button>
@@ -335,14 +336,27 @@
                         <div class="accordion-group" data-accordion-group data-aos="fade-up" data-aos-delay="100">
                             <div class="accordion" data-accordion>
                                 <div class="accordion-control" data-control>
-                                    <h5 class="fs-16 letter-spacing"><b>Research Engineer</b><br>Noah's Ark Lab Huawei Inc.</h5>
-                                    <p style="text-align: right; margin-right: 10px">May. 2020 - Present.&nbsp;</p>
+                                    <h5 class="fs-16 letter-spacing"><b>Undergrad Research Student</b><br>PAIR Lab, University of Toronto</h5>
+                                    <p style="text-align: right; margin-right: 10px">Aug. 2021 - Present.&nbsp;</p>
                                 </div>
                                 <div class="accordion-content" data-content>
                                     <div class="accordion-content-wrapper">
-                                        <p>Assisted the fellow researchers on developing cutting edge methods on video event localization and content understanding.</p>
-                                        <p>Developed a large scaled (>500 classes) video segmentation and labelling system, which have been integrated to the company's production pipeline.</p>
-                                        <p>Researched and integrated various cutting edge CV and multimedia technologies to develop the AI engine for video editing applications. </p>
+                                        <p>Research on a novel method for robot to grasp and assemble objects using 3D computer vision.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion" data-accordion>
+                                <div class="accordion-control" data-control>
+                                    <h5 class="fs-16 letter-spacing"><b>Research Engineer</b><br>Noah's Ark Lab Huawei Inc.</h5>
+                                    <p style="text-align: right; margin-right: 10px">May. 2020 - Aug. 2021.&nbsp;</p>
+                                </div>
+                                <div class="accordion-content" data-content>
+                                    <div class="accordion-content-wrapper">
+                                        <p>Working on a novel method for event localization and classification in videos.</p>
+                                        <p>Assisting research on self-supervised video indexing and retrieval.</p>
+                                        <p>Researching and integrating video understanding methods for video editing applications.</p>
+                                        <p>Assisting research on hand tracking and human action recognition.</p>
                                     </div>
                                 </div>
                             </div>
@@ -386,19 +400,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="accordion" data-accordion>
-                                <div class="accordion-control" data-control>
-                                    <h5 class="fs-16 letter-spacing"><b>Full Stack Developer</b><br>Easy Eduction</h5>
-                                    <p style="text-align: right; margin-right: 10px">April. 2019 - Aug. 2019. &nbsp;</p>
-                                </div>
-                                <div class="accordion-content" data-content>
-                                    <div class="accordion-content-wrapper">
-                                        <p>Managed and maintained the company's various websites, online applications, and database.</p>
-                                        <p>Along with the graphical design team, created <a class="text-info" href="https://ezwecare.ca/">WeCare</a> project</p>
-                                        <p>Optimized and rebased the company's cloud servers, helped to reduce the service cost by 60%</p>
-                                    </div>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                 </div>
