@@ -1,0 +1,74 @@
+- name: mverse
+  link:
+    - url: https://github.com/mverseanalysis/mverse
+      icon: ant-design:github-filled
+    - url: https://mverseanalysis.github.io/mverse/index.html
+      icon: mdi:web-box
+  tag:
+    - logos:r-lang
+  description: An extension that provides user friendly abstractions and examples to <a href="https://mucollective.github.io/multiverse/">multiverse</a> for explorable multiverse analysis in R.
+
+- name: Single Cell Portal
+  link:
+    - url: https://github.com/lihd1003/Single-Cell-Analysis-Web-Portal
+      icon: ant-design:github-filled
+    - url: https://www.youtube.com/watch?v=bbk_lKrU3No&t=12s
+      icon: ant-design:youtube-filled
+  tag:
+    - logos:python
+    - simple-icons:scikitlearn
+    - logos:electron
+  description: Application for data processing and interactive visualization on large scale, high dimension data in single cell analysis.
+
+- name: Notebook
+  link:
+    - url: https://github.com/lihd1003/notebook
+      icon: ant-design:github-filled
+  tag:
+    - ant-design:github-filled
+    - logos:jupyter
+    - cib:latex
+  description: Toolkit for quickly converting Jupyter notebooks to Github Pages. Perfect for cross-platform viewing and sharing.
+
+- name: Cubic Stylization
+  link:
+    - url: https://github.com/lihd1003/csc419-cubic-stylization
+      icon: ant-design:github-filled
+    - url: https://www.youtube.com/watch?v=FS_Dz847uPo
+      icon: ant-design:youtube-filled
+  tag:
+    - logos:c-plusplus
+    - carbon:3d-print-mesh
+  description: Final project for CSC419 Geometry processing, a C++ libigl implementation of <a href="https://www.dgp.toronto.edu/projects/cubic-stylization/">Cubic Stylization [Liu, Jacobson, 2019]</a>.
+
+
+- name: SPH and FLIP fluid
+  link:
+    - url: https://github.com/lihd1003/CSC417-Fluid-Simulation
+      icon: ant-design:github-filled
+    - url: https://youtu.be/tieIpwKc4KM
+      icon: ant-design:youtube-filled
+  tag:
+    - logos:c-plusplus
+    - carbon:3d-print-mesh
+  description: Final project for CSC417 Physics based Animation, a CPU implementation of SPH and FLIP method using Eigen and libigl.
+
+
+- name: Landmark Recognition
+  link:
+    - url: https://github.com/lihd1003/Mound-Of-Poopy-Code/tree/master/Landmark%20Recognition%20(CSC420)
+      icon: ant-design:github-filled
+  tag:
+    - logos:pytorch
+    - simple-icons:opencv
+  description: Final project for CSC420 Intro. to Image Understanding, a large-scale image classification to Google's landmark dataset using Pytorch and OpenCV.
+
+- name: Data Reports
+  link:
+    - url: https://github.com/lihd1003/Data-Science-Reports
+      icon: ant-design:github-filled
+  tag:
+    - ant-design:database-filled
+    - logos:jupyter
+    - logos:r-lang
+  description: The collection of all data science reports and course projects.

@@ -1,0 +1,75 @@
+---
+# Feel free to add content and custom Front Matter to this file.
+# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+
+layout: page
+title: Projects
+---
+
+<section class="bg-white" id="teaching">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-3">
+        <h2 class="fs-24 text-uppercase letter-spacing">Publications</h2>
+      </div>
+      <div class="col-md-9">
+        {% for paper in site.data.publications%}
+        <div class="row justify-content-between align-items-center">
+          <div class="col-md-4">
+            <img src="{{ paper.img }}">
+          </div>
+          <div class="col-md-8">
+            <h4>{{ paper.title }}</h4>
+            <p>{{ paper.authors}}</p>
+            {{ paper.conference }}
+            <p>
+              <a class="btn-primary btn-sm btn btn-green" href="{{ paper.pdf}}">
+                Paper
+                <span class="fs-20 iconify" data-icon="ant-design:file-pdf-outlined"></span>
+              </a>
+              <a class="btn-primary btn-sm btn btn-green" href="{{ paper.page }}">
+                Project
+                <span class="fs-20 iconify" data-icon="ant-design:github-filled"></span>
+              </a>
+              <a class="btn-primary btn-sm btn btn-green" href="{{ paper.video }}">
+                Video
+                <span class="fs-20 iconify" data-icon="ant-design:youtube-filled"></span>
+              </a>
+            </p>
+          </div>
+
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="bg-gray text-white sec" id="project">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h2 class="fs-24 text-uppercase letter-spacing text-white">Projects</h2>
+      </div>
+    </div>
+
+    <div class="row gutter-0">
+      {% for p in site.data.projects %}
+      <div class="col-sm-6 col-md-4">
+        <div class="bordered p-3" style="height: 280px; overflow-y: hidden">
+          {% for tag in p.tag %}
+          <span class="h4 iconify" data-icon="{{ tag }}"></span>
+          {% endfor %}
+          <h4 class="mb-0 "><a href="{{ p.link[0].url }}">{{ p.name }}</a>
+            {% for link in p.link %}
+            <a href="{{ link.url}}"><span class="fs-20 iconify" data-icon="{{ link.icon }}"></span></a>
+            {% endfor %}
+          </h4>
+          <p class="pt-1">{{ p.description }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

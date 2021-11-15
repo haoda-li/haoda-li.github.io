@@ -1,426 +1,117 @@
-<!DOCTYPE html>
-<html lang="en">
+---
+# Feel free to add content and custom Front Matter to this file.
+# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Yurina!</title>
-    <link rel="icon" type="image/gif" href="./assets/images/logo.png">
-    <link rel="stylesheet" href="./assets/css/vendor.css" />
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/98fa07784c.js"></script>
-</head>
+layout: page
+title: Profile
+---
 
-<body>
+<section class="bg-white" id="intro">
+  <div class="container">
+    <div class="row ">
+      <div class="col-md-3">
+        <h2 class="fs-24 text-uppercase letter-spacing">About</h2>
+      </div>
+      <div class="col-lg-7">
+        <p class="fs-18">
+          Hello, my name is Haoda Li. I am a fourth year undergraduate student from University of Toronto.
+          Currently, I’m broadly interested in 3D computer vision, video understanding, geometry processing,
+          and physics based modelling.
+        </p>
+        <p class="fs-18">
+          In addition to my experiences in computer vision, I also study data science and machine learning.
+          I assisted with data analysis and visualizations for several research projects in various fields.
+        </p>
+        <a href="assets/cv.pdf" class="btn btn-md btn-rounded btn-green mt-2">Curriculum Vitae</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- header -->
-    <header class="header-sticky header-dark">
-        <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-dark">
-                <a class="navbar-brand" href="./index.html">
-                    <img class="navbar-logo navbar-logo-light" src="./assets/images/logo.png" alt="Logo">
-                    <img class="navbar-logo navbar-logo-dark" src="./assets/images/logo.png" alt="Logo">
-                </a>
-                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="burger"><span></span></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav align-items-center mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" onclick="switch_sec('project')">Projects</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" onclick="switch_sec('profile')">Profile</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/notebook/index.html">Notes</a>
-                        </li>
-                    </ul>
-
-                    <ul class="navbar-nav align-items-center mr-0">
-                        <li class="nav-item">
-                            <a href="https://github.com/lihd1003" class="nav-link waves-effect waves-light" target="_blank">
-                                <i class="icon-github mr-2"></i>GitHub
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="https://www.linkedin.com/in/haoda-li-515b26165/" class="nav-link waves-effect waves-light" target="_blank">
-                                <i class="icon-linkedin mr-2"></i>Linkedin
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-    </header>
-    <!-- header -->
-
-    <section class="hero hero-with-header text-white" data-top-top="transform: translateY(0px);" data-top-bottom="transform: translateY(250px);">
-        <div class="image image-overlay" style="background-image:url(./assets/images/black.jpg)"></div>
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col text-shadow">
-                    <h1 class="mb-0">Haoda Li</h1>
-                    <p class="lead">Computer Science and Data Science @ U of Toronto</p>
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a onclick="switch_sec('profile')">Profile</a></li>
-                            <li class="breadcrumb-item"><a onclick="switch_sec('project')">Projects</a></li>
-                            <li class="breadcrumb-item"><a href="/notebook/index.html">Notes</a></li>
-                        </ol>
-                    </nav>
-                </div>
+<section class="bg-white pt-0" id="intro">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-3">
+        <h2 class="fs-24 text-uppercase letter-spacing">Education</h2>
+      </div>
+      <div class="col-md-9">
+        <div class="row gutter-1">
+          {% for edu in site.data.education %}
+          <div class="col-6">
+            <div class="bordered p-2 p-md-4">
+              <h5 class="d-block text-green mb-0">{{ edu.degree }}</h5>
+              <span class="d-block text-green mb-3">{{ edu.program }}</span>
+              <h6 class="fs-18 mb-0">{{ edu.school }}</h6>
+              <span class="text-muted">{{ edu.time }}</span>
             </div>
+            {% endfor %}
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section class="bg-white sec" id="project" style="display: none">
-        <div class="container">
-            <div class="row" data-aos="fade-up" data-aos-delay="100">
-                <div class="col">
-                    <h2 class="line-spacing text-decorated">
-                        <b>Featured </b> Projects
-                    </h2>
-                </div>
+<div class="bg-gray text-white component-example">
+  <div class="container">
+    <div class="row gutter-4">
+      <div class="col-md-12" data-aos="fade-up" data-aos-delay="100">
+        <h2 class="fs-24 text-uppercase letter-spacing">Research Experiences</h2>
+      </div>
+      <div class="col-md-12">
+        <div class="accordion-group" data-accordion-group data-aos="fade-up" data-aos-delay="100">
+          {% for r in site.data.research %}
+          <div class="accordion" data-accordion>
+            <div class="accordion-control" data-control>
+              <h5 class="fs-16 letter-spacing"><b>{{ r.position }}</b></h5>
+              <p>Supervised by {{ r.supervisor }}<br>
+                <a href="{{ r.link }}">{{ r.affiliation }}</a>
+              </p>
+              <p style="text-align: right; margin-right: 10px">{{ r.time }}</p>
             </div>
-
-            <div class="row gutter-0">
-                <div class="col-sm-6 col-lg-4 aos-init aos-animate" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
-                    <div class="bordered rising p-3">
-                        <i class="h4 fab fa-r-project"></i>
-                        <h4 class="mb-0"><a href="https://mverseanalysis.github.io/mverse/index.html">mverse</a>
-                            <a href="https://github.com/mverseanalysis/mverse" class="icon-github fs-20"></a>
-                            <a href="https://mverseanalysis.github.io/mverse/index.html" class="icon-external-link  fs-20"></a>
-                        </h4>
-                        <p class="pt-1">An extension that provides user friendly abstractions and examples to <a href="https://mucollective.github.io/multiverse/">multiverse</a> for explorable multiverse analysis in R. </p>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4 aos-init aos-animate" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
-                    <div class="bordered rising p-3">
-                        <i class="h4 fab fa-js"></i> <i class="h4 fab fa-python"></i>
-                        <h4 class="mb-0"><a href="https://github.com/lihd1003/Single-Cell-Analysis-Web-Portal">Single Cell Portal</a>
-                            <a href="https://github.com/lihd1003/Single-Cell-Analysis-Web-Portal" class="icon-github fs-20"></a>
-                        </h4>
-                        <p class="pt-1">Application for data processing and interactive visualization on large scale, high dimension data in single cell analysis.</p>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4 aos-init aos-animate" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
-                    <div class="bordered rising p-3">
-                        <i class="icon-github h4"></i>
-                        <h4 class="mb-0"><a href="/notebook/index.html">Notebook</a>
-                            <a href="https://github.com/lihd1003/notebook" class="icon-github fs-20"></a>
-                        </h4>
-                        <p class="pt-1">Toolkit for quickly converting Jupyter notebooks to Github Pages. Perfect for cross-platform viewing and sharing.</p>
-                    </div>
-                </div>
+            <div class="accordion-content" data-content>
+              <div class="accordion-content-wrapper">
+                <dl class="text-secondary">
+                  {% for duty in r.workduty %}
+                  <dd>{{ duty }}</dd>
+                  {% endfor %}
+                </dl>
+              </div>
             </div>
-
-
+          </div>
+          {% endfor %}
         </div>
-        <div class="component-example bg-gray text-white mt-5">
-            <div class="container mt-5">
-                <div class="row mt-5" data-aos="fade-up" data-aos-delay="100">
-                    <div class="col">
-                        <h2 class="line-spacing text-decorated" style="float: right">
-                            <b>All </b> Projects and Data Reports
-                        </h2>
-                    </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="bg-white" id="teaching">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-3">
+        <h2 class="fs-24 text-uppercase letter-spacing">Teaching Experiences</h2>
+      </div>
+      <div class="col-md-9">
+        {% for teaching in site.data.teaching%}
+        <div class="boxed p-2">
+          <div class="row align-items-center justify-content-between">
+            <div class="col-10">
+              <div class="media align-items-center">
+                <div class="media-body">
+                  <span class="fs-18 text-green">{{ teaching.position }}</span>
+                  <h5 class="fs-20 mb-0">{{ teaching.code }} {{ teaching.name }}</h5>
+                  <span class="text-muted">Instructor: {{ teaching.instructor }}, {{ teaching.school }}</span>
                 </div>
-
-
-                <div class="row" data-aos="fade-up" data-aos-delay="100">
-                    <div class="col-lg-6">
-                        <article class="news">
-                            <div class="abox">
-                                <a href="https://github.com/lihd1003/csc419-cubic-stylization">
-                                    <h3 class="news-title">Cubic Stylization (Geometry Processing)
-                                    </h3>
-                                </a>
-                                <div class="time">
-                                </div>
-                            </div>
-                        </article>
-                        <article class="news">
-                            <div class="abox">
-                                <a href="https://github.com/lihd1003/CSC417-Fluid-Simulation">
-                                    <h3 class="news-title">SPH and FLIP fluid simulation (Physics Based Animation)
-                                    </h3>
-                                </a>
-                                <div class="time">
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="news">
-                            <div class="abox">
-                                <a href="https://github.com/lihd1003/Mound-Of-Poopy-Code/tree/master/Landmark%20Recognition%20(CSC420)">
-                                    <h3 class="news-title">Landmark Recognition (Intro. Image Understanding)
-                                    </h3>
-                                </a>
-                                <div class="time">
-                                </div>
-                            </div>
-                        </article>
-                        <article class="news">
-                            <div class="abox">
-                                <a href="https://github.com/lihd1003/Mound-Of-Poopy-Code/tree/master/Dotty-Bird%20(CSC258)">
-                                    <h3 class="news-title">Dotty-Bird (Verilog)
-                                    </h3>
-                                </a>
-                                <div class="time">
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="news">
-                            <div class="abox">
-                                <a href="https://github.com/lihd1003/Mound-Of-Poopy-Code/tree/master/Restaurant-Manager%20(CSC207)">
-                                    <h3 class="news-title">Restaurant-Manager (Java)
-                                    </h3>
-                                </a>
-                                <div class="time">
-                                </div>
-                            </div>
-                        </article>
-
-
-
-
-                    </div>
-                    <div class="col-lg-6">
-                        <article class="news">
-                            <div class="abox">
-                                <a href="/Data-Science-Reports/JSC270A1/A1.pdf">
-                                    <h3 class="news-title">Analysis of Global Life Expectancy At Birth from 2013 - 2018</h3>
-                                </a>
-                                <div class="time">
-                                    <a href="/Data-Science-Reports/JSC270A1/A1.pdf"><i class="fas fa-file-pdf fs-20 text-secondary"></i></a>&nbsp;&nbsp;
-                                    <a href="/Data-Science-Reports/JSC270A1/A1.ipynb"><i class="fab fa-python fs-20"></i></a>&nbsp;&nbsp;
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="news">
-                            <div class="abox">
-                                <a href="/Data-Science-Reports/JSC270A2/A2.pdf">
-                                    <h3 class="news-title">Analysis of Yelp data</h3>
-                                </a>
-                                <div class="time">
-                                    <a href="/Data-Science-Reports/JSC270A2/A2.pdf"><i class="fas fa-file-pdf fs-20"></i></a>&nbsp;&nbsp;
-                                    <a href="/Data-Science-Reports/JSC270A2/A2.ipynb"><i class="fab fa-python fs-20"></i></a>&nbsp;&nbsp;
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="news">
-                            <div class="abox">
-                                <a href="/Data-Science-Reports/JSC270A3/A3.pdf">
-                                    <h3 class="news-title">How to reduce idling time for commercial vehicles in Toronto</h3>
-                                </a>
-                                <div class="time">
-                                    <a href="/Data-Science-Reports/JSC270A3/A3.pdf"><i class="fas fa-file-pdf fs-20"></i></a>&nbsp;&nbsp;
-                                    <a href="/Data-Science-Reports/JSC270A3/A3.ipynb"><i class="fab fa-python fs-20"></i></a>&nbsp;&nbsp;
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="news">
-                            <div class="abox">
-                                <a>
-                                    <h3 class="news-title">Characteristic Predictions on Texas Hotel Occupancy Tax Evasion</h3>
-                                </a>
-                                <div class="time">
-                                    <a href="https://github.com/lihd1003/Booking.com-Scraper"><i class="fas fa-server fs-20"></i></a>&nbsp;&nbsp;
-
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="news">
-                            <div class="abox">
-                                <a href="/Data-Science-Reports/JSC370A1/report.pdf">
-                                    <h3 class="news-title">When Do A Scientists Do Their Best Work? <br> Finding Associations Between Scientific Impact and Timing of A Scientist’s Career
-                                    </h3>
-                                </a>
-                                <div class="time">
-                                    <a href="/Data-Science-Reports/JSC370A1/report.pdf"><i class="fas fa-file-pdf fs-20"></i></a>&nbsp;&nbsp;
-                                    <a href="/Data-Science-Reports/JSC370A1/A1.ipynb"><i class="fab fa-python fs-20"></i></a>&nbsp;&nbsp;
-                                </div>
-                            </div>
-                        </article>
-
-
-                        <article class="news">
-                            <div class="abox">
-                                <a href="/Data-Science-Reports/JSC370A2/report.pdf">
-                                    <h3 class="news-title">Linking TCGA’s to Lung Cancers <br> Clustering Lung Cancer Patients by Genomic Information
-                                    </h3>
-                                </a>
-                                <div class="time">
-                                    <a href="/Data-Science-Reports/JSC370A2/report.pdf"><i class="fas fa-file-pdf fs-20"></i></a>&nbsp;&nbsp;
-                                    <a href="/Data-Science-Reports/JSC370A2/report.ipynb"><i class="fab fa-python fs-20"></i></a>&nbsp;&nbsp;
-                                </div>
-                            </div>
-                        </article>
-
-
-                        <article class="news">
-                            <div class="abox">
-                                <a href="/Data-Science-Reports/JSC370A5/poster.pdf">
-                                    <h3 class="news-title">Web Development is Redundantly Complicated
-                                    </h3>
-                                </a>
-                                <div class="time">
-                                    <a href="/Data-Science-Reports/JSC370A5/design_report.pdf"><i class="fas fa-file-pdf fs-20"></i></a>&nbsp;&nbsp;
-                                    <a href="/Data-Science-Reports/JSC370A5/design_report.ipynb"><i class="fab fa-python fs-20"></i></a>&nbsp;&nbsp;
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-
-                </div>
+              </div>
             </div>
-        </div>
-    </section>
-
-    <section class="bg-white sec" id="profile">
-        <div class="container">
-            <div class="row" data-aos="fade-up">
-                <div class="col">
-                    <h2 class="line-spacing text-decorated"><b>Profile</b> &nbsp;&nbsp;&nbsp;
-                        <!--<button type="button" class="btn btn-md btn-facebook" onclick=" window.open('assets/resume.pdf', '_blank')">
-                          Resume
-                        </button>-->
-                        <button type="button" class="btn btn-md btn-primary" onclick=" window.open('assets/cv.pdf', '_blank')">
-                          Curriculum Vitae
-                        </button>
-                    </h2>
-                </div>
+            <div class="col-2 text-md-right">
+              <span class="text-muted">{{ teaching.time }}</span>
             </div>
+          </div>
         </div>
-
-        <div class="container my-3">
-            <div class="row gutter-4">
-                <div class="col-md-12" data-aos="fade-up" data-aos-delay="100">
-                    <h5 class="mt-0 text-facebook font-weight-bold fs-20 letter-spacing"><i class="icon-book fs-30 text_facebook mr-2"></i>Education</h5>
-                    <p> Sept. 2017 - Present. &nbsp;
-                        <span class="letter-spacing"><b>Bachelor of Science</b>
-              &nbsp;Computer Science Specialist & Data Science Specialist
-              <br>University of Toronto, St. George Campus
-            </span>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="container my-3">
-            <div class="row gutter-4">
-                <div class="col-md-10" data-aos="fade-up" data-aos-delay="100">
-                    <h5 class="mt-0 text-facebook font-weight-bold fs-20 letter-spacing"><i class="icon-code fs-30 text_facebook mr-2"></i>Skills</h5>
-                    <p><b class="letter-spacing">Computer Graphics</b> &nbsp;&nbsp;OpenGL, WebGL, Physic Based Animation, Geometry Processing</p>
-                    <p><b class="letter-spacing">Computer Vision</b> &nbsp;&nbsp; pytorch, torchvision, Video Understanding, 3D shape accusation</p>
-                    <p><b class="letter-spacing">Deep Learning</b> &nbsp;&nbsp; pytorch, tensorflow, Neural Network, Machine Learning, Statitical Learning Theory</p>
-                    <p><b class="letter-spacing">Software Engineering</b> &nbsp;&nbsp;Full Stack Web Development, Android Development, Project Management</p>
-                    <p><b class="letter-spacing">Data Science</b> &nbsp;&nbsp;Data Mining, Big Data Handling, Database Management, Data Visualization</p>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="bg-gray text-white component-example">
-            <div class="container">
-                <div class="row gutter-4">
-                    <div class="col-md-12" data-aos="fade-up" data-aos-delay="100">
-                        <h5 class="font-weight-bold fs-20 letter-spacing"><i class="icon-suitcase fs-30 text_facebook mr-2"></i>Experiences</h5>
-                    </div>
-                    <div class="row">
-                        <div class="accordion-group" data-accordion-group data-aos="fade-up" data-aos-delay="100">
-                            <div class="accordion" data-accordion>
-                                <div class="accordion-control" data-control>
-                                    <h5 class="fs-16 letter-spacing"><b>Undergrad Research Student</b><br>PAIR Lab, University of Toronto</h5>
-                                    <p style="text-align: right; margin-right: 10px">Aug. 2021 - Present.&nbsp;</p>
-                                </div>
-                                <div class="accordion-content" data-content>
-                                    <div class="accordion-content-wrapper">
-                                        <p>Research on a novel method for robot to grasp and assemble objects using 3D computer vision.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="accordion" data-accordion>
-                                <div class="accordion-control" data-control>
-                                    <h5 class="fs-16 letter-spacing"><b>Research Engineer</b><br>Noah's Ark Lab Huawei Inc.</h5>
-                                    <p style="text-align: right; margin-right: 10px">May. 2020 - Aug. 2021.&nbsp;</p>
-                                </div>
-                                <div class="accordion-content" data-content>
-                                    <div class="accordion-content-wrapper">
-                                        <p>Working on a novel method for event localization and classification in videos.</p>
-                                        <p>Assisting research on self-supervised video indexing and retrieval.</p>
-                                        <p>Researching and integrating video understanding methods for video editing applications.</p>
-                                        <p>Assisting research on hand tracking and human action recognition.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="accordion" data-accordion>
-                                <div class="accordion-control" data-control>
-                                    <h5 class="fs-16 letter-spacing"><b>Research Assistant</b><br>Dept. of Computer Science, U of Toronto</h5>
-                                    <p style="text-align: right; margin-right: 10px">Jan. 2021 - Jun. 2021.&nbsp;</p>
-                                </div>
-                                <div class="accordion-content" data-content>
-                                    <div class="accordion-content-wrapper">
-                                        <p>Research with Prof. Fanny Chevalier and Prof. Nathan Taback.</p>
-                                        <p>Assisted the implementation of mverse package for multiverse analysis in R.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="accordion" data-accordion>
-                                <div class="accordion-control" data-control>
-                                    <h5 class="fs-16 letter-spacing"><b>Undergrad Researcher</b><br>Wang Lab, Vector Institute</h5>
-                                    <p style="text-align: right; margin-right: 10px">May. 2019 - Apr. 2020.&nbsp;</p>
-                                </div>
-                                <div class="accordion-content" data-content>
-                                    <div class="accordion-content-wrapper">
-                                        <p>Research Porject under the supervision of Prof. Bo Wang.</p>
-                                        <p>Researched, designed, and implemented the web application for creating, runing, and visualizing machine learning based algorithms on single cell analysis.</p>
-                                        <p> Allowed biomedical researcher to get hands free from coding, while accessing the power of cutting-edge machine learning algorithms.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion" data-accordion>
-                                <div class="accordion-control" data-control>
-                                    <h5 class="fs-16 letter-spacing"><b>Data Scientist</b><br>Easy Group Inc.</h5>
-                                    <p style="text-align: right; margin-right: 10px">Sept. 2019 - Apr. 2020. &nbsp;</p>
-                                </div>
-                                <div class="accordion-content" data-content>
-                                    <div class="accordion-content-wrapper">
-                                        <p>Created and managed the user profile database for management and analysis</p>
-                                        <p>Conducted analysis on sales, proposed the market prediction and pricing model</p>
-                                        <p>Automated the user interests tracking process, allowed more motivative promotions on individual clients</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- / presentation -->
-
-
-
-
-    <script src="./assets/js/vendor.js"></script>
-    <script src="./assets/js/app.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script>
-        const switch_sec = (id) => {
-            $(".sec").hide()
-            $("#" + id).fadeIn("slow")
-        }
-    </script>
-</body>
-
-</html>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

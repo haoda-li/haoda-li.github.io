@@ -1,0 +1,251 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.4in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\classesList}[4]{
+    \item\small{
+        {#1 #2 #3 #4 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \textsl{\small#3} & {\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textbf{\small #2}\\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+    {\Huge \scshape Haoda Li} \\ \vspace{1pt}
+    \small \raisebox{-0.1\height}\faPhone\ 306-987-2666 ~ \href{mailto:haoda.li@mail.utoronto.ca}{\raisebox{-0.2\height}\faEnvelope\  \underline{haoda.li@mail.utoronto.ca}} ~ 
+    \href{https://github.com/lihd1003}{\raisebox{-0.2\height}\faGithub\ \underline{github.com/lihd1003}}
+    \vspace{-8pt}
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Toronto, St. George Campus}{Sep. 2017 -- May 2022 (Expected)}
+      {Honours BSc in Computer Science \& Data Science (GPA: 3.89/4.0)}{Toronto, ON}\\
+  \resumeSubHeadingListEnd
+  
+\section{Research Interest}
+I'm broadly interested in video understanding, 3D computer vision, geometry processing, and physics based modelling. 
+
+%-----------EXPERIENCE-----------
+\section{Research Experience}
+    \vspace{8pt}   
+    \resumeSubHeadingListStart
+  
+ 
+    \resumeSubheading
+      {PAIR Lab, Vector Institute}{August 2021 -- Now}
+      {Research student, supervised by Animesh Garg}{Toronto, ON}
+      \resumeItemListStart
+        \resumeItem{Research on a novel method for robot to grasp and assemble objects using 3D computer vision.}
+    \resumeItemListEnd
+  \vspace{8pt}   
+    \resumeSubheading
+      {Noah's Ark Lab, Huawei Canada}{May 2020 -- August 2021}
+      {Research Engineer Intern}{Markham, ON}
+      \resumeItemListStart
+        \resumeItem{Working on a novel method for event localization and classification in videos.} 
+        \resumeItem{Assisting research on self-supervised video indexing and retrieval.}
+        \resumeItem{Researching and integrating video understanding methods for video editing applications.}
+        \resumeItem{Assisting research on hand tracking and human action recognition}
+      \resumeItemListEnd
+      
+
+    
+ \vspace{8pt}
+    \resumeSubheading
+      {Wang Lab, University Health Network}{September 2019 -- April 2020}
+      {Undergraduate Researcher, supervised by Bo Wang}{Toronto, ON}
+      \resumeItemListStart
+        \resumeItem{Designing and creating an interactive application for processing and visualizing high-dimensional data in single cell analysis.}
+        \resumeItem{Researching on CUDA acceleration for single cell analysis algorithms.}
+    \resumeItemListEnd
+ \vspace{8pt}    
+    \resumeSubheading
+      {Dept. of Computer Science, University of Toronto}{January 2021 -- June 2021}
+      {Research Assistant with Fanny Chevalier and Nathan Taback}{Toronto, ON}
+      \resumeItemListStart
+        \resumeItem{Working on a new R package for multiverse analysis education.}
+    \resumeItemListEnd
+    
+  \resumeSubHeadingListEnd
+  
+%-----------PROJECTS-----------
+
+\section{Teaching Experience}
+  \vspace{8pt}   
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {CSC417H1/CSC2549H Physics based Animation}{September 2021 -- December 2021}
+      {Teaching Assistant with Prof. David I.W. Levin}{University of Toronto}
+      
+     \resumeSubheading
+      {CSC311H5 Introduction to Machine Learning}{September 2021 -- December 2021}
+      {Teaching Assistant with Prof. Anthony Bonner}{University of Toronto}
+      
+      
+\vspace{8pt}    
+    
+  \resumeSubHeadingListEnd
+  
+\section{Honours and Awards}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {Dr. James A. \& Connie P. Dickson Scholarship In Science \& Mathematics} {October 2020}\vspace{-25pt}
+    \resumeProjectHeading
+          {University College Special Admission Scholarships} {September 2017}\vspace{-25pt}
+    \resumeProjectHeading
+          {Dean's List Scholar} {2017--2021, all years}\vspace{-25pt}
+    \resumeSubHeadingListEnd
+\vspace{8pt}
+
+%-----------Course-------------
+\section{Relevant Coursework}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Computer Graphics}{: Physics-Based Animation; Geometry Processing; Computer Graphics} \\
+     \vspace{2pt}  
+     \textbf{Computer Vision}{: Intro Visual Computing; Intro Image Understanding} \\
+     \vspace{2pt}  
+     \textbf{Deep Learning}{: Neural Nets and Deep Learning; Probabilistic Learning and Reasoning; Intro Machine Learning} \\
+     \vspace{2pt}  
+     \textbf{Numerical Analysis}{: Numerical Methods; Nonlinaer Optimization; Intro Real Analysis}\\
+     \vspace{2pt}  
+     \textbf{Theory of Computation}{: Algorithm Design, Analysis, and Complexity; Enriched Data Structures and Analysis; Enriched Intro Theory of Computation}
+    }}
+ \end{itemize}
+ 
+
+
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Python,  C/C++, Matlab, Java, R, SQL, HTML/CSS, JS} \\
+     \textbf{Toolkit/Frameworks}{: Pytorch, Scipy family, OpenGL, libigl, React, three.js, D3.js}
+    }}
+ \end{itemize}
+
+
+
+  
+%-----------PROJECTS-----------
+
+\end{document}
