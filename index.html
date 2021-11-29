@@ -67,7 +67,7 @@ title: Profile
               <p>Supervised by 
                 {% for s in r.supervisor %}
                   {% if s.link %}
-                    <a href="{{ s.link }}">{{ r.name }}</a> 
+                    <a href="{{ s.link }}">{{ s.name }}</a> 
                   {% else %} 
                     {{ s.name }} 
                   {% endif %}
