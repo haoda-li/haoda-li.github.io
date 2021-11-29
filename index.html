@@ -66,7 +66,7 @@ title: Profile
               <h5 class="fs-16 letter-spacing"><b>{{ r.position }}</b></h5>
               <p>Supervised by 
                 {% for s in r.supervisor %}
-                  {% if r.link %}
+                  {% if s.link %}
                     <a href="{{ s.link }}">{{ r.name }}</a> 
                   {% else %} 
                     {{ s.name }} 
