@@ -64,8 +64,20 @@ title: Profile
           <div class="accordion" data-accordion>
             <div class="accordion-control" data-control>
               <h5 class="fs-16 letter-spacing"><b>{{ r.position }}</b></h5>
-              <p>Supervised by {{ r.supervisor }}<br>
-                <a href="{{ r.link }}">{{ r.affiliation }}</a>
+              <p>Supervised by 
+                {% for s in r.supervisor %}
+                  {% if r.link %}
+                    <a href="{{ s.link }}">{{ r.name }}</a> 
+                  {% else %} 
+                    {{ s.name }} 
+                  {% endif %}
+                {% endfor %}
+                <br>
+                {% if r.link %}
+                  <a href="{{ r.link }}">{{ r.affiliation }}</a> 
+                {% else %} 
+                  {{ r.affiliation }} 
+                {% endif %}
               </p>
               <p style="text-align: right; margin-right: 10px">{{ r.time }}</p>
             </div>
