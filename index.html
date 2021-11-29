@@ -71,7 +71,7 @@ title: Profile
                   {% else %} 
                     {{ s.name }} 
                   {% endif %}
-                  {% if forloop.last != false %}
+                  {% if forloop.last == false %}
                     , 
                   {% endif %}
                 {% endfor %}
