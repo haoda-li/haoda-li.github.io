@@ -1,3 +1,6 @@
+- title: One paper has been submitted to CVPR2022
+  conference: IEEE Conference on Computer Vision and Pattern Recognition (CVPR) 2022
+
 - title: Decompose the Sounds and Pixels, Recompose the Events
   authors: 
     - name: Varshanth Rao
@@ -11,3 +14,4 @@
       link: https://scholar.google.com/citations?user=Asz24wcAAAAJ
   conference: Confernce on Artificial Intelligence (AAAI) 2022
   img: assets/images/publications/edrnet.png
+
