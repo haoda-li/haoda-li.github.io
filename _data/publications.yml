@@ -1,7 +1,12 @@
-# - title: Placeholder
-#   authors: Placeholder
-#   conference: Placeholder
-#   pdf: #
-#   page: #
-#   video: #
-#   img: assets/images/electron.png
+- title: Decompose the Sounds and Pixels, Recompose the Events
+  authors: 
+    - name: Varshanth Rao
+      link: https://dblp.org/pid/160/0492.html
+    - name: Md Ibrahim Khalil
+      link: https://www.linkedin.com/in/mdikhalil/?originalSubdomain=ca
+    - name: <b>Haoda Li</b>
+    - name: Peng Dai
+      link: https://scholar.google.com.sg/citations?user=pOpgtRgAAAAJ
+    - name: Juwei Lu
+      link: https://scholar.google.com/citations?user=Asz24wcAAAAJ
+  conference: Accepted to Thirty-Sixth AAAI Conference on Artificial Intelligence

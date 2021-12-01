@@ -16,25 +16,47 @@ title: Projects
         {% for paper in site.data.publications%}
         <div class="row justify-content-between align-items-center">
           <div class="col-md-4">
-            <img src="{{ paper.img }}">
+            {% if paper.img %}
+              <img src="{{ paper.img }}">
+            {% endif %}
           </div>
           <div class="col-md-8">
             <h4>{{ paper.title }}</h4>
-            <p>{{ paper.authors}}</p>
+            <p>
+              {% for author in paper.authors %}
+                {% if author.link %}
+                  <a href="{{ author.link }}">{{ author.name }}</a>
+                {% else %}
+                  {{ author.name }}
+                {% endif %}
+                {% if forloop.last == false %}, {% endif %}
+              {% endfor %}
+            </p>
             {{ paper.conference }}
             <p>
+              {% if paper.pdf %}
               <a class="btn-primary btn-sm btn btn-green" href="{{ paper.pdf}}">
-                Paper
+                arXiv
                 <span class="fs-20 iconify" data-icon="ant-design:file-pdf-outlined"></span>
               </a>
+              {% else %}
+              <a class="btn-primary btn-sm btn btn-green disabled">
+                Coming soon
+                <span class="fs-20 iconify" data-icon="ant-design:file-pdf-outlined"></span>
+              </a>
+              {% endif %}
+              {% if paper.page %}
               <a class="btn-primary btn-sm btn btn-green" href="{{ paper.page }}">
                 Project
                 <span class="fs-20 iconify" data-icon="ant-design:github-filled"></span>
               </a>
+              {% endif %}
+              {% if paper.video %}
               <a class="btn-primary btn-sm btn btn-green" href="{{ paper.video }}">
                 Video
                 <span class="fs-20 iconify" data-icon="ant-design:youtube-filled"></span>
               </a>
+              {% endif %}
             </p>
           </div>
 
