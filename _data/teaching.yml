@@ -3,11 +3,18 @@
   code: CSC417H1/CSC2549H
   instructor: David I.W. Levin
   position: Teaching Assistant
-  time: Fall, 2021
+  time: Fall 2021
 
 - school: University of Toronto
   name: Introduction to Machine Learning
   code: CSC311H5
   instructor: Anthony Bonner
   position: Teaching Assistant
-  time: Fall, 2021
+  time: Fall 2021
+  
+- school: University of Toronto
+  name: Computer Graphics
+  code: CSC317H1
+  instructor: Alec Jacobson, David I.W. Levin
+  position: Teaching Assistant
+  time: Winter 2022
