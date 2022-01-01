@@ -1,5 +1,16 @@
-- title: One paper has been submitted to CVPR2022
-  conference: IEEE Conference on Computer Vision and Pattern Recognition (CVPR) 2022
+- title: "Neural Shape Mating Self-Supervised Object Assembly with Adversarial Shape Priors"
+  authors: 
+    - name: Yun-Chun Chen
+      link: https://yunchunchen.github.io/
+    - name: <b>Haoda Li</b>
+    - name: Dylan Turpin
+      link: http://www.cs.toronto.edu/~dylanturpin/
+    - name: Alec Jacobson
+      link: https://www.cs.toronto.edu/~jacobson/
+    - name: Animesh Garg
+      link: https://animesh.garg.tech/
+  conference: Under Review
+  img: assets/images/publications/nsm.png
 
 - title: Decompose the Sounds and Pixels, Recompose the Events
   authors: 
