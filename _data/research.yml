@@ -8,6 +8,16 @@
   workduty:
     - Research on a novel method for assembling aribitrary shaped 3D objects without additional guidiance.
 
+- position: Undergrad Research Student
+  supervisor: 
+    - name: Nandita Vijaykumar
+      link: http://www.cs.toronto.edu/~nandita/
+  affiliation: Computer System and Networks Group, University of Toronto
+  link: http://csng.cs.toronto.edu/index.php
+  time: Jan. 2022 - Present
+  workduty:
+    - Research on a unified framework for accelerating implicit neural representations of 3D objects and images.
+
 - position: Research Engineer
   supervisor: 
     - name: Juwei Lu
