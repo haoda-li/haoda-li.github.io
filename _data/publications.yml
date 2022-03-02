@@ -10,9 +10,11 @@
     - name: Animesh Garg
       link: https://animesh.garg.tech/
   conference: IEEE Conference on Computer Vision and Pattern Recognition (CVPR) 2022 （Accpeted）
+  pageL https://neural-shape-mating.github.io/
+  pdf: https://openreview.net/pdf?id=Y77aWEc17ln
   img: assets/images/publications/nsm.png
 
-- title: "Decompose the Sounds and Pixels, Recompose the Events"
+- title: Decompose the Sounds and Pixels, Recompose the Events
   authors: 
     - name: Varshanth Rao
       link: https://dblp.org/pid/160/0492.html
@@ -23,7 +25,7 @@
       link: https://scholar.google.com.sg/citations?user=pOpgtRgAAAAJ
     - name: Juwei Lu
       link: https://scholar.google.com/citations?user=Asz24wcAAAAJ
-  conference: Confernce on Artificial Intelligence (AAAI) 2022 <br>(Oral Presentation)
+  conference: Confernce on Artificial Intelligence (AAAI) 2022
   img: assets/images/publications/edrnet.jpg
   pdf: https://arxiv.org/abs/2112.11547
 
