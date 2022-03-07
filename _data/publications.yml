@@ -11,7 +11,7 @@
       link: https://animesh.garg.tech/
   conference: IEEE Conference on Computer Vision and Pattern Recognition (CVPR) 2022 （Accpeted）
   page: https://neural-shape-mating.github.io/
-  pdf: https://openreview.net/pdf?id=Y77aWEc17ln
+#  pdf: https://openreview.net/pdf?id=Y77aWEc17ln
   img: assets/images/publications/nsm.png
 
 - title: Decompose the Sounds and Pixels, Recompose the Events
