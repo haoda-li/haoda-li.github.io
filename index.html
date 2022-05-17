@@ -40,46 +40,49 @@ title: Profile
           <div class="col-6">
             <div class="bordered p-2 p-md-4">
               <h5 class="d-block text-green mb-0">{{ edu.degree }}</h5>
-              <span class="d-block text-green mb-3">{{ edu.program }} (GPA {{ edu.gpa }})</span>
+              <span class="d-block text-green mb-3">{{ edu.program }} {% if edu.gpa %}(GPA {{ edu.gpa }}){% endif %}</span>
               <h6 class="fs-18 mb-0">{{ edu.school }}</h6>
               <span class="text-muted">{{ edu.time }}</span>
             </div>
-            {% endfor %}
           </div>
+          {% endfor %}
         </div>
       </div>
     </div>
   </div>
 </section>
 
+
 <div class="bg-gray text-white component-example">
   <div class="container">
     <div class="row gutter-4">
       <div class="col-md-12" data-aos="fade-up" data-aos-delay="100">
-        <h2 class="fs-24 text-uppercase letter-spacing">Research Experiences</h2>
+        <h2 class="fs-24 text-uppercase letter-spacing">Featured Experiences</h2>
       </div>
       <div class="col-md-12">
         <div class="accordion-group" data-accordion-group data-aos="fade-up" data-aos-delay="100">
-          {% for r in site.data.research %}
+          {% for r in site.data.experience %}
           <div class="accordion" data-accordion>
             <div class="accordion-control" data-control>
               <h5 class="fs-16 letter-spacing"><b>{{ r.position }}</b></h5>
-              <p>Supervised by 
-                {% for s in r.supervisor %}
-                  {% if s.link %}
-                    <a href="{{ s.link }}">{{ s.name }}</a> 
-                  {% else %} 
-                    {{ s.name }}
-                  {% endif %}
-                  {% if forloop.last == false %}
-                    , 
-                  {% endif %}
-                {% endfor %}
+              <p>Supervised by
+                {% if r.supervisor %}
+                  {% for s in r.supervisor %}
+                    {% if s.link %}
+                      <a href="{{ s.link }}">{{ s.name }}</a>
+                    {% else %}
+                      {{ s.name }}
+                    {% endif %}
+                    {% if forloop.last == false %}
+                    ,
+                    {% endif %}
+                  {% endfor %}
+                {% endif %}
                 <br>
                 {% if r.link %}
-                  <a href="{{ r.link }}">{{ r.affiliation }}</a> 
-                {% else %} 
-                  {{ r.affiliation }} 
+                  <a href="{{ r.link }}">{{ r.affiliation }}</a>
+                {% else %}
+                  {{ r.affiliation }}
                 {% endif %}
               </p>
               <p style="text-align: right; margin-right: 10px">{{ r.time }}</p>
@@ -101,7 +104,76 @@ title: Profile
   </div>
 </div>
 
-<section class="bg-white" id="teaching">
+
+
+
+
+<section class="bg-white" id="pub">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <h2 class="fs-24 text-uppercase letter-spacing">Publications</h2>
+      </div>
+      <div class="col-md-9">
+        {% for paper in site.data.publications%}
+        <div class="row justify-content-between align-items-center">
+          <div class="col-md-4">
+            {% if paper.img %}
+              <img src="{{ paper.img }}">
+            {% endif %}
+          </div>
+          <div class="col-md-8">
+            <h5>{{ paper.title }}</h5>
+            <p class="lead">
+              {% for author in paper.authors %}
+                {% if author.link %}
+                  <a href="{{ author.link }}">{{ author.name }}</a>
+                {% else %}
+                  {{ author.name }}
+                {% endif %}
+                {% if forloop.last == false %}, {% endif %}
+              {% endfor %}
+              <br>
+              <i>{{ paper.conference }}</i>
+            </p>
+
+            <p>
+              {% if paper.pdf %}
+              <a class="btn-sm btn btn-green" href="{{ paper.pdf }}">
+                arXiv
+                <span class="fs-20 iconify" data-icon="ant-design:file-pdf-outlined"></span>
+              </a>
+              {% else %}
+              <a class="btn-secondary btn-sm btn disabled">
+                Coming soon
+                <span class="fs-20 iconify" data-icon="ant-design:file-pdf-outlined"></span>
+              </a>
+              {% endif %}
+              {% if paper.page %}
+              <a class="btn-sm btn btn-green" href="{{ paper.page }}">
+                Project
+                <span class="fs-20 iconify" data-icon="ant-design:github-filled"></span>
+              </a>
+              {% endif %}
+              {% if paper.video %}
+              <a class="btn-sm btn btn-green" href="{{ paper.video }}">
+                Video
+                <span class="fs-20 iconify" data-icon="ant-design:youtube-filled"></span>
+              </a>
+              {% endif %}
+            </p>
+          </div>
+
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="bg-secondary" id="teaching">
   <div class="container">
     <div class="row align-items-center">
       <div class="col-md-3">
@@ -109,7 +181,7 @@ title: Profile
       </div>
       <div class="col-md-9">
         {% for teaching in site.data.teaching%}
-        <div class="boxed p-2">
+        <div class="p-2">
           <div class="row align-items-center justify-content-between">
             <div class="col-10">
               <div class="media align-items-center">

@@ -1,5 +1,5 @@
 - position: Research Student
-  supervisor: 
+  supervisor:
     - name: Animesh Garg
       link: https://animesh.garg.tech/
   affiliation: PAIR Lab, University of Toronto
@@ -9,7 +9,7 @@
     - Research on a novel method for assembling aribitrary shaped 3D objects without additional guidiance.
 
 - position: Research Student
-  supervisor: 
+  supervisor:
     - name: Nandita Vijaykumar
       link: http://www.cs.toronto.edu/~nandita/
   affiliation: Computer System and Networks Group, University of Toronto
@@ -19,7 +19,7 @@
     - Research on a unified framework for accelerating implicit neural representations of 3D objects and images.
 
 - position: Research Engineer
-  supervisor: 
+  supervisor:
     - name: Juwei Lu
       link: https://www.researchgate.net/profile/Juwei-Lu
   affiliation: Noah's Ark Lab, Huawei Canada Inc.
@@ -32,7 +32,7 @@
     - Assisting research on hand tracking and human action recognition.
 
 - position: Undergrad Research Student
-  supervisor: 
+  supervisor:
     - name: Bo Wang
       link: https://wanglab.ml/
   affiliation: Wang Lab, Vector Institute
@@ -43,7 +43,7 @@
     - Working on optimizations and CUDA accelerations of single cell analysis algorithms.
 
 - position: Research Assistant
-  supervisor: 
+  supervisor:
     - name: Fanny Chevalier
       link: http://fannychevalier.net/
     - name: Nathan Taback
@@ -54,7 +54,7 @@
     - Assisted the implementation of mverse package for multiverse analysis in R.
 
 - position: Research Assistant
-  supervisor: 
+  supervisor:
     - name: Jason Hackworth
       link: http://individual.utoronto.ca/hackworth/index.html
   affiliation: Dept. of Planning and Geography, U of Toronto
@@ -63,7 +63,7 @@
     - Assisted with data collection and analysis for the research on Detroit property transactions.
 
 - position: Research Assistant
-  supervisor: 
+  supervisor:
     - name: Yao Luo
       link: https://sites.google.com/site/luo8yao/home
   affiliation: Dept. of Economics, U of Toronto
