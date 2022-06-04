@@ -1,10 +1,10 @@
+- school: University of California, Berkeley
+  degree: Master of Engineering
+  program: Electrical Engineering and Computer Sciences
+  time: 2022-2023
+
 - school: University of Toronto
-  degree: Bachelor of Science
+  degree: Honours Bachelor of Science
   program: Computer Science and Data Science
   time: 2017-2022
   gpa: 3.91/4.00
-
-# - school: University of California, Berkeley
-#   degree: Master of Engineering
-#   program: Electrical Engineering and Computer Sciences
-#   time: 2022-2023

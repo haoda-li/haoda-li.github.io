@@ -1,0 +1,33 @@
+- position: Research Engineer
+  supervisor:
+    - name: Juwei Lu
+      link: https://www.researchgate.net/profile/Juwei-Lu
+  affiliation: Noah's Ark Lab, Huawei Canada Inc.
+  link: https://github.com/huawei-noah
+  time: May. 2020 - Aug. 2021
+  workduty:
+    - Working on a novel method for event localization and classification in videos.
+    - Assisting research on self-supervised video indexing and retrieval.
+    - Researching and integrating video understanding methods for video editing applications.
+    - Assisting research on hand tracking and human action recognition.
+
+- position: Research Student
+  supervisor:
+    - name: Animesh Garg
+      link: https://animesh.garg.tech/
+  affiliation: PAIR Lab, University of Toronto
+  link: https://www.pair.toronto.edu/
+  time: Aug. 2021 - Present
+  workduty:
+    - Research on a novel method for assembling aribitrary shaped 3D objects without additional guidiance.
+    
+- position: Research Student
+  supervisor:
+    - name: Bo Wang
+      link: https://wanglab.ml/
+  affiliation: Wang Lab, Vector Institute
+  link: https://wanglab.ml/
+  time: May. 2019 - Apr. 2020
+  workduty:
+    - Researched, designed, and implemented the web application for creating, runing, and visualizing single cell analysis.
+    - Working on optimizations and CUDA accelerations of single cell analysis algorithms.
