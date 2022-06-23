@@ -9,7 +9,7 @@
       link: https://www.cs.toronto.edu/~jacobson/
     - name: Animesh Garg
       link: https://animesh.garg.tech/
-  conference: IEEE Conference on Computer Vision and Pattern Recognition (CVPR) 2022 （Accpeted）
+  conference: Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2022
   page: https://neural-shape-mating.github.io/
   pdf: https://arxiv.org/abs/2205.14886
   img: assets/images/publications/nsm.png
@@ -25,7 +25,7 @@
       link: https://scholar.google.com.sg/citations?user=pOpgtRgAAAAJ
     - name: Juwei Lu
       link: https://scholar.google.com/citations?user=Asz24wcAAAAJ
-  conference: Confernce on Artificial Intelligence (AAAI) 2022
+  conference: Confernce on Artificial Intelligence (AAAI), 2022
   img: assets/images/publications/edrnet.jpg
   page: http://pdaicode.github.io/projects/edrnet.html
   pdf: https://arxiv.org/abs/2112.11547
