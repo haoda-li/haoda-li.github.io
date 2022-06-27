@@ -152,9 +152,15 @@ title: Profile
               {% if paper.page %}
               <a class="btn-sm btn btn-green" href="{{ paper.page }}">
                 Project
-                <span class="fs-20 iconify" data-icon="ant-design:github-filled"></span>
+                <span class="fs-20 iconify" data-icon="ant-design:paper-clip-filled"></span>
               </a>
               {% endif %}
+              {% if paper.code %}
+              <a class="btn-sm btn btn-green" href="{{ paper.code }}">
+                arXiv
+                <span class="fs-20 iconify" data-icon="ant-design:github-filled"></span>
+              </a>
+              {% else %}
               {% if paper.video %}
               <a class="btn-sm btn btn-green" href="{{ paper.video }}">
                 Video
