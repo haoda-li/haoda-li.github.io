@@ -59,9 +59,20 @@
     - url: https://github.com/lihd1003/Mound-Of-Poopy-Code/tree/master/Landmark%20Recognition%20(CSC420)
       icon: ant-design:github-filled
   tag:
-    - logos:pytorch
+    - logos:pytorch-icon
     - simple-icons:opencv
   description: Final project for CSC420 Intro. to Image Understanding, a large-scale image classification to Google's landmark dataset using Pytorch and OpenCV.
+
+- name: Sour Lemon
+  link:
+    - url: https://github.com/lihd1003/sour-lemon 
+      icon: ant-design:github-filled
+    - url: https://sourlemon47.herokuapp.com
+      icon: logos:heroku-icon
+  tag:
+    - logos:nodejs-icon
+    - logos:html-5
+  description: Final project for CSC309 Web Programming, a web app that can read movie information, comment movies, and rate movies. Powered by TMDB
 
 - name: Data Reports
   link:
