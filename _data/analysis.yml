@@ -1,0 +1,28 @@
+- position: Research Assistant
+  supervisor:
+    - name: Jason Hackworth
+      link: http://individual.utoronto.ca/hackworth/index.html
+  affiliation: Dept. of Planning and Geography, U of Toronto
+  time: Oct. 2021 - Jun. 2022
+  workduty:
+    - Assisted with data collection and analysis for the research on Detroit property transactions.
+
+- position: Research Assistant
+  supervisor:
+    - name: Fanny Chevalier
+      link: http://fannychevalier.net/
+    - name: Nathan Taback
+      link: https://utstat.toronto.edu/nathan/
+  affiliation: Dept. of Computer Science, U of Toronto
+  time: Jan. 2021 - Mar. 2022
+  workduty:
+    - Assisted the implementation of mverse package for multiverse analysis in R.
+
+- position: Research Assistant
+  supervisor:
+    - name: Yao Luo
+      link: https://sites.google.com/site/luo8yao/home
+  affiliation: Dept. of Economics, U of Toronto
+  time: May. 2018 - Aug. 2018
+  workduty:
+    - Assisted with data collection, analysis, and visualizations for the research on tax evasion in Texas Airbnb market.

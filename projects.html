@@ -55,6 +55,53 @@ title: Projects
         </div>
       </div>
     </div>
+
+    <div class="row gutter-4">
+      <div class="col-md-12" data-aos="fade-up" data-aos-delay="100">
+        <h2 class="fs-24 text-uppercase letter-spacing">Data Analysis Projects</h2>
+      </div>
+      <div class="col-md-12">
+        <div class="accordion-group" data-accordion-group data-aos="fade-up" data-aos-delay="100">
+          {% for r in site.data.analysis %}
+          <div class="accordion" data-accordion>
+            <div class="accordion-control" data-control>
+              <h5 class="fs-16 letter-spacing"><b>{{ r.position }}</b></h5>
+              <p>Supervised by
+                {% if r.supervisor %}
+                  {% for s in r.supervisor %}
+                    {% if s.link %}
+                      <a href="{{ s.link }}">{{ s.name }}</a>
+                    {% else %}
+                      {{ s.name }}
+                    {% endif %}
+                    {% if forloop.last == false %}
+                    ,
+                    {% endif %}
+                  {% endfor %}
+                {% endif %}
+                <br>
+                {% if r.link %}
+                  <a href="{{ r.link }}">{{ r.affiliation }}</a>
+                {% else %}
+                  {{ r.affiliation }}
+                {% endif %}
+              </p>
+              <p style="text-align: right; margin-right: 10px">{{ r.time }}</p>
+            </div>
+            <div class="accordion-content" data-content>
+              <div class="accordion-content-wrapper">
+                <dl>
+                  {% for duty in r.workduty %}
+                  <dd>{{ duty }}</dd>
+                  {% endfor %}
+                </dl>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
