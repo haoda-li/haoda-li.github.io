@@ -10,7 +10,7 @@
 
 - name: Single Cell Portal
   link:
-    - url: https://github.com/lihd1003/Single-Cell-Analysis-Web-Portal
+    - url: https://github.com/haoda-li/Single-Cell-Analysis-Web-Portal
       icon: ant-design:github-filled
     - url: https://www.youtube.com/watch?v=bbk_lKrU3No&t=12s
       icon: ant-design:youtube-filled
@@ -22,7 +22,7 @@
 
 - name: Notebook
   link:
-    - url: https://github.com/lihd1003/notebook
+    - url: https://github.com/haoda-li/notebook
       icon: ant-design:github-filled
   tag:
     - ant-design:github-filled
@@ -32,7 +32,7 @@
 
 - name: Cubic Stylization
   link:
-    - url: https://github.com/lihd1003/csc419-cubic-stylization
+    - url: https://github.com/haoda-li/csc419-cubic-stylization
       icon: ant-design:github-filled
     - url: https://www.youtube.com/watch?v=FS_Dz847uPo
       icon: ant-design:youtube-filled
@@ -44,7 +44,7 @@
 
 - name: SPH and FLIP fluid
   link:
-    - url: https://github.com/lihd1003/CSC417-Fluid-Simulation
+    - url: https://github.com/haoda-li/CSC417-Fluid-Simulation
       icon: ant-design:github-filled
     - url: https://youtu.be/tieIpwKc4KM
       icon: ant-design:youtube-filled
@@ -56,7 +56,7 @@
 
 - name: Landmark Recognition
   link:
-    - url: https://github.com/lihd1003/Mound-Of-Poopy-Code/tree/master/Landmark%20Recognition%20(CSC420)
+    - url: https://github.com/haoda-li/Mound-Of-Poopy-Code/tree/master/Landmark%20Recognition%20(CSC420)
       icon: ant-design:github-filled
   tag:
     - logos:pytorch-icon
@@ -65,7 +65,7 @@
 
 - name: Sour Lemon
   link:
-    - url: https://github.com/lihd1003/sour-lemon 
+    - url: https://github.com/haoda-li/sour-lemon 
       icon: ant-design:github-filled
     - url: https://sourlemon47.herokuapp.com
       icon: logos:heroku-icon
@@ -76,7 +76,7 @@
 
 - name: Data Reports
   link:
-    - url: https://github.com/lihd1003/Data-Science-Reports
+    - url: https://github.com/haoda-li/Data-Science-Reports
       icon: ant-design:github-filled
   tag:
     - ant-design:database-filled
