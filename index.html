@@ -167,6 +167,12 @@ title: Profile
                 <span class="fs-20 iconify" data-icon="ant-design:youtube-filled"></span>
               </a>
               {% endif %}
+              {% if paper.slides %}
+              <a class="btn-sm btn btn-green" href="{{ paper.slides }}">
+                Slides
+                <span class="fs-20 iconify" data-icon="ri:slideshow-line"></span>
+              </a>
+              {% endif %}
             </p>
           </div>
 
