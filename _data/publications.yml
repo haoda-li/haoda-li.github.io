@@ -1,14 +1,18 @@
-# - title: "SPIDR: SDF-based Neural Point Fields for Illumination and Deformation"
-#   authors: 
-#     - name: Ruofan Liang
-#       link: https://scholar.google.com/citations?user=wTwaTMYAAAAJ
-#     - name: Jiahao Zhang
-#       link: https://www.linkedin.com/in/jiahao-zhang-4988ba230/
-#     - name: <b>Haoda Li</b>
-#     - name: Chen Yang
-#     - name: Nandita Vijaykumar
-#       link: http://www.cs.toronto.edu/~nandita/
-#   conference: Under Review
+- title: "SPIDR: SDF-based Neural Point Fields for Illumination and Deformation"
+  authors: 
+    - name: Ruofan Liang
+      link: https://scholar.google.com/citations?user=wTwaTMYAAAAJ
+    - name: Jiahao Zhang
+      link: https://www.linkedin.com/in/jiahao-zhang-4988ba230/
+    - name: <b>Haoda Li</b>
+    - name: Chen Yang
+    - name: Nandita Vijaykumar
+      link: http://www.cs.toronto.edu/~nandita/
+  conference: Preprint 2022
+  page: https://nexuslrf.github.io/SPIDR_webpage/
+  code: https://github.com/nexuslrf/SPIDR
+  paper: https://arxiv.org/abs/2210.08398
+  img: assets/images/publications/spidr.png
 
 - title: "Neural Shape Mating Self-Supervised Object Assembly with Adversarial Shape Priors"
   authors: 
