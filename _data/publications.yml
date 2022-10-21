@@ -11,7 +11,7 @@
   conference: Preprint 2022
   page: https://nexuslrf.github.io/SPIDR_webpage/
   code: https://github.com/nexuslrf/SPIDR
-  paper: https://arxiv.org/abs/2210.08398
+  pdf: https://arxiv.org/abs/2210.08398
   img: assets/images/publications/spidr.png
 
 - title: "Neural Shape Mating Self-Supervised Object Assembly with Adversarial Shape Priors"
