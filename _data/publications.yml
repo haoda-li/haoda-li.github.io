@@ -59,5 +59,6 @@
       link: https://scholar.google.com.sg/citations?user=pOpgtRgAAAAJ
     - name: Juwei Lu
       link: https://scholar.google.com/citations?user=Asz24wcAAAAJ
-  conference: European Conference on Computer Vision (ECCV) 2022 (Accepted)
+  conference: European Conference on Computer Vision (ECCV) 2022
+  pdf: https://link.springer.com/content/pdf/10.1007/978-3-031-19830-4_39.pdf
   img: assets/images/publications/DPNet.png
