@@ -1,3 +1,14 @@
+- position: Graduate Research Student
+  supervisor:
+    - name: Avideh Zakhor
+      link: https://www-video.eecs.berkeley.edu/~avz/
+  affiliation: VIP Lab, UC Berkeley
+  link: https://www-video.eecs.berkeley.edu/
+  time: Aug. 2022 - Present
+  workduty:
+    - Working on end-to-end drone systems for high quality indoor 3D reconstruction and measurements.
+    - Integrating neural rendering technology into large scale 3D mapping and reconstruction. 
+
 - position: Research Engineer
   supervisor:
     - name: Juwei Lu
@@ -17,17 +28,7 @@
       link: https://animesh.garg.tech/
   affiliation: PAIR Lab, University of Toronto
   link: https://www.pair.toronto.edu/
-  time: Aug. 2021 - Present
+  time: Aug. 2021 - Jul. 2022
   workduty:
-    - Research on a novel method for assembling aribitrary shaped 3D objects without additional guidiance.
-    
-- position: Research Student
-  supervisor:
-    - name: Bo Wang
-      link: https://wanglab.ml/
-  affiliation: Wang Lab, Vector Institute
-  link: https://wanglab.ml/
-  time: May. 2019 - Apr. 2020
-  workduty:
-    - Researched, designed, and implemented the web application for creating, runing, and visualizing single cell analysis.
-    - Working on optimizations and CUDA accelerations of single cell analysis algorithms.
+    - Wokring on a novel method for assembling aribitrary shaped 3D objects without additional guidiance.
+    - Creating simulation environment for generating fractured 3D objects. 

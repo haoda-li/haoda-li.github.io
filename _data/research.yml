@@ -1,3 +1,14 @@
+- position: Graduate Research Student
+  supervisor:
+    - name: Avideh Zakhor
+      link: https://www-video.eecs.berkeley.edu/~avz/
+  affiliation: VIP Lab, UC Berkeley
+  link: https://www-video.eecs.berkeley.edu/
+  time: Aug. 2022 - Present
+  workduty:
+    - Working on end-to-end drone systems for high quality indoor 3D reconstruction and measurements.
+    - Integrating neural rendering technology into large scale 3D mapping and reconstruction. 
+
 - position: Research Student
   supervisor:
     - name: Animesh Garg
@@ -14,9 +25,10 @@
       link: http://www.cs.toronto.edu/~nandita/
   affiliation: Computer System and Networks Group, University of Toronto
   link: http://csng.cs.toronto.edu/index.php
-  time: Jan. 2022 - Present
+  time: Jan. 2022 - Sept. 2022
   workduty:
     - Research on a unified framework for accelerating implicit neural representations of 3D objects and images.
+    - Research on a novel algorithm for implicit neural rendering with support for geomertic editing and relighting. 
 
 - position: Research Engineer
   supervisor:
