@@ -14,14 +14,20 @@ title: Profile
       </div>
       <div class="col-lg-7">
         <p class="fs-18">
-          I am current a master student in EECS at UC berkeley. I’m broadly interested in 3D computer vision, video understanding, geometry processing,
-          and physics based modelling.
+          I'm an EECS master of engineering student at UC Berkeley. I primarily focus on 3D computer vision and
+          computer graphics. Prior, I graduated from U of Toronto with B.S. in computer science and data science.
         </p>
         <p class="fs-18">
-          In addition to my experiences in computer vision, I also study data science and machine learning.
-          I assisted with data analysis and visualizations for several research projects in various fields.
+          With a combination of industry experiences and academic research, I'm skillful and passionate in developing
+          new innovations and real-world solutions for 3D computer vision, computer graphics, and multimedia processing.
         </p>
-        <a href="assets/resume.pdf" class="btn btn-md btn-rounded btn-green mt-2">Resume/CV</a>
+        <p class="fs-18">
+          Aside from visual computing, I'm experienced in data science. I've assisted with multiple research projects in
+          economics, genomics, and geography planning, and I've designed and implemented several database systems and
+          analytics pipelines for local businesses.
+        </p>
+        <a href="assets/resume.pdf" class="btn btn-md btn-rounded btn-green mt-2">Resume</a>
+        <a href="assets/cv.pdf" class="btn btn-md btn-rounded btn-green mt-2 ml-3">Full CV</a>
       </div>
     </div>
   </div>
@@ -39,7 +45,8 @@ title: Profile
           <div class="col-6">
             <div class="bordered p-2 p-md-4">
               <h5 class="d-block text-green mb-0">{{ edu.degree }}</h5>
-              <span class="d-block text-green mb-3">{{ edu.program }} {% if edu.gpa %}(GPA {{ edu.gpa }}){% endif %}</span>
+              <span class="d-block text-green mb-3">{{ edu.program }} {% if edu.gpa %}(GPA {{ edu.gpa }}){% endif
+                %}</span>
               <h6 class="fs-18 mb-0">{{ edu.school }}</h6>
               <span class="text-muted">{{ edu.time }}</span>
             </div>
@@ -66,22 +73,22 @@ title: Profile
               <h5 class="fs-16 letter-spacing"><b>{{ r.position }}</b></h5>
               <p>Supervised by
                 {% if r.supervisor %}
-                  {% for s in r.supervisor %}
-                    {% if s.link %}
-                      <a href="{{ s.link }}">{{ s.name }}</a>
-                    {% else %}
-                      {{ s.name }}
-                    {% endif %}
-                    {% if forloop.last == false %}
-                    ,
-                    {% endif %}
-                  {% endfor %}
+                {% for s in r.supervisor %}
+                {% if s.link %}
+                <a href="{{ s.link }}">{{ s.name }}</a>
+                {% else %}
+                {{ s.name }}
+                {% endif %}
+                {% if forloop.last == false %}
+                ,
+                {% endif %}
+                {% endfor %}
                 {% endif %}
                 <br>
                 {% if r.link %}
-                  <a href="{{ r.link }}">{{ r.affiliation }}</a>
+                <a href="{{ r.link }}">{{ r.affiliation }}</a>
                 {% else %}
-                  {{ r.affiliation }}
+                {{ r.affiliation }}
                 {% endif %}
               </p>
               <p style="text-align: right; margin-right: 10px">{{ r.time }}</p>
@@ -118,19 +125,19 @@ title: Profile
         <div class="row justify-content-between align-items-center">
           <div class="col-md-4">
             {% if paper.img %}
-              <img src="{{ paper.img }}">
+            <img src="{{ paper.img }}">
             {% endif %}
           </div>
           <div class="col-md-8">
             <h5>{{ paper.title }}</h5>
             <p class="lead">
               {% for author in paper.authors %}
-                {% if author.link %}
-                  <a href="{{ author.link }}">{{ author.name }}</a>
-                {% else %}
-                  {{ author.name }}
-                {% endif %}
-                {% if forloop.last == false %}, {% endif %}
+              {% if author.link %}
+              <a href="{{ author.link }}">{{ author.name }}</a>
+              {% else %}
+              {{ author.name }}
+              {% endif %}
+              {% if forloop.last == false %}, {% endif %}
               {% endfor %}
               <br>
               <i>{{ paper.conference }}</i>
