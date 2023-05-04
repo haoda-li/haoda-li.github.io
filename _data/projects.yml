@@ -8,6 +8,17 @@
     - logos:r-lang
   description: An extension that provides user friendly abstractions and examples to <a href="https://mucollective.github.io/multiverse/">multiverse</a> for explorable multiverse analysis in R.
 
+- name: CubicCraft
+  link:
+    - url: https://github.com/haoda-li/CubicCraft
+      icon: ant-design:github-filled
+    - url: https://www.youtube.com/watch?v=FS_Dz847uPo
+      icon: ant-design:youtube-filled
+  tag:
+    - logos:c-plusplus
+    - carbon:3d-print-mesh
+  description: A Taichi implementation of <a href="https://www.dgp.toronto.edu/projects/cubic-stylization/">Cubic Stylization [Liu, Jacobson, 2019]</a> with real-time rendering and interactive GUI.
+
 - name: Single Cell Portal
   link:
     - url: https://github.com/haoda-li/Single-Cell-Analysis-Web-Portal
@@ -29,18 +40,6 @@
     - logos:jupyter
     - cib:latex
   description: Toolkit for quickly converting Jupyter notebooks to Github Pages. Perfect for cross-platform viewing and sharing.
-
-- name: Cubic Stylization
-  link:
-    - url: https://github.com/haoda-li/csc419-cubic-stylization
-      icon: ant-design:github-filled
-    - url: https://www.youtube.com/watch?v=FS_Dz847uPo
-      icon: ant-design:youtube-filled
-  tag:
-    - logos:c-plusplus
-    - carbon:3d-print-mesh
-  description: Final project for CSC419 Geometry processing, a C++ libigl implementation of <a href="https://www.dgp.toronto.edu/projects/cubic-stylization/">Cubic Stylization [Liu, Jacobson, 2019]</a>.
-
 
 - name: SPH and FLIP fluid
   link:
