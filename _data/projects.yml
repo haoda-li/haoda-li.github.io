@@ -15,7 +15,7 @@
     - url: https://www.youtube.com/watch?v=FS_Dz847uPo
       icon: ant-design:youtube-filled
   tag:
-    - logos:c-plusplus
+    - simple-icons:taichilang
     - carbon:3d-print-mesh
   description: A Taichi implementation of <a href="https://www.dgp.toronto.edu/projects/cubic-stylization/">Cubic Stylization [Liu, Jacobson, 2019]</a> with real-time rendering and interactive GUI.
 
