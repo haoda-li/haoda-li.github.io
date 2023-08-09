@@ -1,3 +1,15 @@
+- title: "Scalable MAV Indoor Reconstruction with Neural Implicit Surfaces"
+  authors:
+    - name: <b>Haoda Li</b>
+    - name: Puyuan Yi
+      link: https://www.linkedin.com/in/puyuan-yi-05771b242/
+    - name: Yunhao Liu
+      link: https://www.linkedin.com/in/yunhao-liu-david1578/
+    - name: Avideh Zakhor
+      link: http://www-video.eecs.berkeley.edu/~avz/
+  conference: ICCV 2023 Workshop on Computer Vision Aided Architectural Design
+  img: assets/images/publications/drone.jpg
+
 - title: "SPIDR: SDF-based Neural Point Fields for Illumination and Deformation"
   authors: 
     - name: Ruofan Liang
@@ -9,7 +21,7 @@
       link: https://scholar.google.com/citations?user=StdXTR8AAAAJ
     - name: Nandita Vijaykumar
       link: http://www.cs.toronto.edu/~nandita/
-  conference: CVPR 2023 workshop on Advances in NeRF for the Metaverse
+  conference: CVPR 2023 Workshop on Advances in NeRF for the Metaverse
   page: https://nexuslrf.github.io/SPIDR_webpage/
   code: https://github.com/nexuslrf/SPIDR
   pdf: https://arxiv.org/abs/2210.08398
@@ -26,14 +38,14 @@
       link: https://www.cs.toronto.edu/~jacobson/
     - name: Animesh Garg
       link: https://animesh.garg.tech/
-  conference: Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2022
+  conference: Computer Vision and Pattern Recognition (CVPR), 2022
   page: https://neural-shape-mating.github.io/
   code: https://github.com/pairlab/NSM
   pdf: https://arxiv.org/abs/2205.14886
   img: assets/images/publications/nsm.png
   slides: assets/NSM-slides.pdf
 
-- title: Decompose the Sounds and Pixels, Recompose the Events
+- title: "Decompose the Sounds and Pixels, Recompose the Events"
   authors: 
     - name: Varshanth Rao
       link: https://dblp.org/pid/160/0492.html
@@ -49,7 +61,7 @@
   page: http://pdaicode.github.io/projects/edrnet.html
   pdf: https://arxiv.org/abs/2112.11547
 
-- title: Dual Perspective Network for Audio Visual Event Localization
+- title: "Dual Perspective Network for Audio Visual Event Localization"
   authors: 
     - name: Varshanth Rao
       link: https://dblp.org/pid/160/0492.html
