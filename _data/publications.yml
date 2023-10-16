@@ -9,6 +9,7 @@
       link: http://www-video.eecs.berkeley.edu/~avz/
   conference: ICCV 2023 Workshop on Computer Vision Aided Architectural Design
   img: assets/images/publications/drone.jpg
+  pdf: https://openaccess.thecvf.com/content/ICCV2023W/CVAAD/papers/Li_Scalable_MAV_Indoor_Reconstruction_with_Neural_Implicit_Surfaces_ICCVW_2023_paper.pdf
 
 - title: "SPIDR: SDF-based Neural Point Fields for Illumination and Deformation"
   authors: 
