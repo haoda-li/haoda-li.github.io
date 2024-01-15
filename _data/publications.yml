@@ -44,7 +44,6 @@
   code: https://github.com/pairlab/NSM
   pdf: https://arxiv.org/abs/2205.14886
   img: assets/images/publications/nsm.png
-  slides: assets/NSM-slides.pdf
 
 - title: "Decompose the Sounds and Pixels, Recompose the Events"
   authors: 
