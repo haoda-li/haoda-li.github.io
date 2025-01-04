@@ -14,10 +14,10 @@ title: Profile
       </div>
       <div class="col-lg-7">
         <p class="fs-18">
-          I'm skillful and passionate in developing new innovations and real-world solutions for 3D computer vision and computer graphics. 
-          Recently, I completed my Master of Engineering in EECS at UC Berkeley, where I worked on large-scale scene reconstructions, supervised by Prof. Avideh Zakhor.
-          Previously I obtained my Bachelor of Science degree at U of Toronto.
-          Currently, I'm interested in high-fidelity 3D reconstruction from monocular cameras. 
+          I'm skillful and passionate in developing new innovations and real-world solutions for parallel computing applications in machine learning and 3D graphics. 
+          Currently, I'm a ML compiler engineer who works on accelerating and optimizing GenAI models on cutting-edge ML chips. Previously, 
+          I completed my Master of Engineering in EECS at UC Berkeley, where I worked on large-scale scene reconstructions, supervised by Prof. Avideh Zakhor, and
+          I obtained my Bachelor of Science degree at U of Toronto, with a focus on artificial intelligence and computer vision.
         </p>
         
         <a href="assets/cv.pdf" class="btn btn-md btn-rounded btn-green mt-2 ml-3">Resume/CV</a>
@@ -178,32 +178,3 @@ title: Profile
 
 
 
-<section class="bg-secondary" id="teaching">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-md-3">
-        <h2 class="fs-24 text-uppercase letter-spacing">Teaching Experiences</h2>
-      </div>
-      <div class="col-md-9">
-        {% for teaching in site.data.teaching%}
-        <div class="p-2">
-          <div class="row align-items-center justify-content-between">
-            <div class="col-10">
-              <div class="media align-items-center">
-                <div class="media-body">
-                  <span class="fs-18 text-green">{{ teaching.position }}</span>
-                  <h5 class="fs-20 mb-0">{{ teaching.code }} {{ teaching.name }}</h5>
-                  <span class="text-muted">Instructor: {{ teaching.instructor }}, {{ teaching.school }}</span>
-                </div>
-              </div>
-            </div>
-            <div class="col-2 text-md-right">
-              <span class="text-muted">{{ teaching.time }}</span>
-            </div>
-          </div>
-        </div>
-        {% endfor %}
-      </div>
-    </div>
-  </div>
-</section>

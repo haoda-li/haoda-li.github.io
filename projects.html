@@ -134,3 +134,33 @@ title: Projects
     </div>
   </div>
 </section>
+
+<section class="bg-secondary" id="teaching">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-3">
+        <h2 class="fs-24 text-uppercase letter-spacing">Teaching Experiences</h2>
+      </div>
+      <div class="col-md-9">
+        {% for teaching in site.data.teaching%}
+        <div class="p-2">
+          <div class="row align-items-center justify-content-between">
+            <div class="col-10">
+              <div class="media align-items-center">
+                <div class="media-body">
+                  <span class="fs-18 text-green">{{ teaching.position }}</span>
+                  <h5 class="fs-20 mb-0">{{ teaching.code }} {{ teaching.name }}</h5>
+                  <span class="text-muted">Instructor: {{ teaching.instructor }}, {{ teaching.school }}</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-2 text-md-right">
+              <span class="text-muted">{{ teaching.time }}</span>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
