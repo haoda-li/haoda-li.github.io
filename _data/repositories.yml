@@ -1,14 +1,10 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - haoda-li
 
 repo_description_lines_max: 2
 
 github_repos:
-  - alshedivat/al-folio
-  - jekyll/jekyll
-  - twbs/bootstrap
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - mathjax/MathJax
-  - jpswalsh/academicons
+  - haoda-li/mkdocs-plotly-plugin
+  - haoda-li/CubicCraft
+  - mverseanalysis/mverse
+  - aws-neuron/nki-library

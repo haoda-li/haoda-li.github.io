@@ -1,34 +1,27 @@
-"adams":
-  - firstname: ["Edwin", "E.", "E. P.", "Edwin Plimpton"]
-    url: https://en.wikipedia.org/wiki/Edwin_Plimpton_Adams
+"chen":
+  - firstname: ["Yun-Chun", "Y.-C.", "Yun Chun"]
+    url: https://yunchunchen.github.io/
 
-"podolsky":
-  - firstname: ["Boris", "B.", "B. Y.", "Boris Yakovlevich"]
-    url: https://en.wikipedia.org/wiki/Boris_Podolsky
+"liang":
+  - firstname: ["Ruofan", "R.", "Ruo Fan"]
+    url: https://scholar.google.com/citations?user=wTwaTMYAAAAJ
 
-"rosen":
-  - firstname: ["Nathan", "N."]
-    url: https://en.wikipedia.org/wiki/Nathan_Rosen
+"zakhor":
+  - firstname: ["Avideh"]
+    url: http://www-video.eecs.berkeley.edu/~avz/
 
-"bach":
-  - firstname: ["Johann Sebastian", "J. S."]
-    url: https://en.wikipedia.org/wiki/Johann_Sebastian_Bach
+"vijaykumar":
+  - firstname: ["Nandita"]
+    url: http://www.cs.toronto.edu/~nandita/
 
-  - firstname: ["Carl Philipp Emanuel", "C. P. E."]
-    url: https://en.wikipedia.org/wiki/Carl_Philipp_Emanuel_Bach
+"rao":
+  - firstname: ["Varshanth", "V."]
+    url: https://dblp.org/pid/160/0492.html
 
-"przibram":
-  - firstname: ["Karl"]
-    url: https://link.springer.com/article/10.1007/s00016-019-00242-z
+"Khalil":
+  - firstname: ["Md Ibrahim"]
+    url: https://www.linkedin.com/in/mdikhalil/
 
-"schrodinger":
-  - firstname: ["Erwin"]
-    url: https://en.wikipedia.org/wiki/Erwin_Schr%C3%B6dinger
-
-"lorentz":
-  - firstname: ["Hendrik Antoon"]
-    url: https://en.wikipedia.org/wiki/Hendrik_Lorentz
-
-"planck":
-  - firstname: ["Max"]
-    url: https://en.wikipedia.org/wiki/Max_Planck
+"turpin":
+  - firstname: ["Dylan"]
+    url: http://www.cs.toronto.edu/~dylanturpin/
