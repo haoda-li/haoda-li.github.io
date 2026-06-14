@@ -1,0 +1,1129 @@
+diff --git a/.agents/skills/notes-conversion/SKILL.md b/.agents/skills/notes-conversion/SKILL.md
+index 58f1ac8..9223841 100644
+--- a/.agents/skills/notes-conversion/SKILL.md
++++ b/.agents/skills/notes-conversion/SKILL.md
+@@ -1,10 +1,11 @@
+ # Notes Conversion
+ 
+-Use this skill when editing note files in the _notes folder and converting content to the distill-style format used by this site.
++Use this skill when editing note files in the \_notes folder and converting content to the distill-style format used by this site.
+ 
+ ## When to use
+ 
+ Apply these conversions when a note contains:
++
+ - markdown image syntax such as ![alt](path)
+ - bibliography citations written as [@key]
+ 
+@@ -18,13 +19,14 @@ Use this pattern:
+ 
+ ```liquid
+ <div class="row mt-3">
+-    <div class="col-lg mt-3 mt-md-0">
+-        {% include figure.liquid path="assets/notes/your-image.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+-    </div>
++  <div class="col-lg mt-3 mt-md-0">
++    {% include figure.liquid path="assets/notes/your-image.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
++  </div>
+ </div>
+ ```
+ 
+ Rules:
++
+ - Replace markdown image syntax like ![alt](path) with the figure include block above.
+ - Use the correct asset path relative to the site root, for example assets/notes/file.jpg.
+ - Verify the target file exists in the assets folder before using it.
+@@ -35,17 +37,19 @@ Rules:
+ Convert markdown-style citations to distill-compatible cite tags.
+ 
+ Replace:
++
+ - [@key] with <d-cite key="key" />
+ - Mixtral[@mixtral] with Mixtral <d-cite key="mixtral" />
+ 
+ ### Front matter
+ 
+ When a note is missing or needs updated front matter:
++
+ - Use the first H1 heading as the title.
+ - Use the H2 headings as the TOC entries under toc -> name.
+ - Quote TOC names that contain special characters such as punctuation or parentheses.
+ - Remove the H1 heading from the markdown body once the title is already present in front matter.
+-- Keep the front matter consistent with the existing distill-style notes in _notes.
++- Keep the front matter consistent with the existing distill-style notes in \_notes.
+ 
+ ### Foldable blocks
+ 
+@@ -53,7 +57,7 @@ Convert admonition-style foldable blocks of the form:
+ 
+ ```md
+ ??? some-label "title"
+-    content
++content
+ ```
+ 
+ to the details-style syntax:
+@@ -65,6 +69,7 @@ content
+ ```
+ 
+ Rules:
++
+ - Use `???` as the main marker for the foldable block.
+ - Treat the token after `???` as a modifier or style label and ignore it for the conversion.
+ - Use the quoted title as the details label.
+@@ -75,11 +80,13 @@ Rules:
+ 
+ Convert include-style code snippets of the form:
+ 
+-```md
++````md
+ ```python
+ --8<-- "notes/research/scripts/file.py"
+ ```
+-```
++````
++
++````
+ 
+ to:
+ 
+@@ -87,9 +94,10 @@ to:
+ {% highlight python %}
+ {% include_relative scripts/file.py %}
+ {% endhighlight %}
+-```
++````
+ 
+ Rules:
++
+ - Replace the fenced code block with a Liquid highlight block.
+ - Use the file path after `--8<--` to build the include_relative path.
+ - Strip the leading `notes/research/` prefix when converting to the site-relative include path.
+@@ -97,6 +105,6 @@ Rules:
+ 
+ ## Notes
+ 
+-- These rules are intended for content in _notes and similar distill-style markdown notes.
++- These rules are intended for content in \_notes and similar distill-style markdown notes.
+ - Keep the content readable and preserve the surrounding prose when converting.
+ - If a path does not exist, update it to the correct asset location or report the mismatch.
+diff --git a/_config.yml b/_config.yml
+index ded3d85..faaa935 100644
+--- a/_config.yml
++++ b/_config.yml
+@@ -6,13 +6,13 @@ title: Haoda Li # the website title (if blank, full name will be used instead)
+ first_name: Haoda
+ last_name: Li
+ contact_note:
+-description: 
+-footer_text: 
++description:
++footer_text:
+ keywords: # add your own keywords or leave empty
+ lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
+ icon: logo.png # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
+ url: https://haoda-li.github.io # the base hostname & protocol for your site
+-baseurl:  # the subpath of your site, e.g. /blog/. Leave blank for root
++baseurl: # the subpath of your site, e.g. /blog/. Leave blank for root
+ last_updated: false # set to true if you want to display last updated in the footer
+ impressum_path: # set to path to include impressum link in the footer, use the same path as permalink in a page, helps to conform with EU GDPR
+ back_to_top: true # set to false to disable the back to top button
+@@ -21,7 +21,7 @@ back_to_top: true # set to false to disable the back to top button
+ # Theme
+ # -----------------------------------------------------------------------------
+ # repo color theme
+-repo_theme_light: vue  # https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
++repo_theme_light: vue # https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
+ repo_theme_dark: vue-dark # https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
+ repo_trophies:
+   enabled: false
+@@ -115,7 +115,7 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
+ # -----------------------------------------------------------------------------
+ 
+ blog_name: notebook # blog_name will be displayed in your blog page
+-blog_description: 
++blog_description:
+ permalink: /blog/:year/:title/
+ lsi: false # produce an index for related posts
+ 
+diff --git a/_data/coauthors.yml b/_data/coauthors.yml
+index 064ac51..fe17e48 100644
+--- a/_data/coauthors.yml
++++ b/_data/coauthors.yml
+@@ -24,4 +24,4 @@
+ 
+ "turpin":
+   - firstname: ["Dylan"]
+-    url: http://www.cs.toronto.edu/~dylanturpin/
+\ No newline at end of file
++    url: http://www.cs.toronto.edu/~dylanturpin/
+diff --git a/_data/repositories.yml b/_data/repositories.yml
+index dbf0b13..cac3869 100644
+--- a/_data/repositories.yml
++++ b/_data/repositories.yml
+@@ -7,4 +7,4 @@ github_repos:
+   - haoda-li/mkdocs-plotly-plugin
+   - haoda-li/CubicCraft
+   - mverseanalysis/mverse
+-  - aws-neuron/nki-library
+\ No newline at end of file
++  - aws-neuron/nki-library
+diff --git a/_data/socials.yml b/_data/socials.yml
+index eb1f027..132ca73 100644
+--- a/_data/socials.yml
++++ b/_data/socials.yml
+@@ -5,4 +5,4 @@ cv_pdf: /assets/pdf/cv.pdf # path to your CV PDF file
+ email: haoda_li@berkeley.edu # your email address
+ github_username: haoda-li # your GitHub username
+ linkedin_username: haoda-li # your LinkedIn username
+-scholar_userid: e1Bif78AAAAJ # your Google Scholar ID
+\ No newline at end of file
++scholar_userid: e1Bif78AAAAJ # your Google Scholar ID
+diff --git a/_notes/llama.md b/_notes/llama.md
+index 9095507..ae13a75 100644
+--- a/_notes/llama.md
++++ b/_notes/llama.md
+@@ -31,28 +31,29 @@ toc:
+       - name: Flash Attention
+ ---
+ 
+-The note will focus on transformer-based large language models, their inference pass, and some implementation basics. The note mainly use LLaMA series <d-cite key="llama2" /><d-cite key="llama3" /> as a model example, and [`hunggingface/transformers`](https://huggingface.co/docs/transformers/index) as a reference for LLM framework implementation. 
++The note will focus on transformer-based large language models, their inference pass, and some implementation basics. The note mainly use LLaMA series <d-cite key="llama2" /><d-cite key="llama3" /> as a model example, and [`hunggingface/transformers`](https://huggingface.co/docs/transformers/index) as a reference for LLM framework implementation.
+ 
+-Additional resources: 
+-- [`huggingface/nlp-course`](https://huggingface.co/learn/nlp-course) 
++Additional resources:
++
++- [`huggingface/nlp-course`](https://huggingface.co/learn/nlp-course)
+ - [GPT from scratch by Jay Mody](https://jaykmody.com/blog/gpt-from-scratch/#setup)
+ 
+ ## Pipeline Components
+ 
+-As a high-level view, a LLM inference pipeline consists of 
++As a high-level view, a LLM inference pipeline consists of
+ 
+-- [__tokenizer__](#tokenizers): input natural language text stream, output tokens. 
+-- [__embedding__](#embedding): maps the tokens into a numerical format so that the model can consume. 
+-- [__model__](#transformers): the actual LLM model, which takes the embedding and outputs according to the model tasks. 
+-    - A typical transformer model has a `encoder` (plus `positional encoding`) to encode the input into feature vectors, a `decoder` that takes the features and other inputs to generate outputs.  
+-    - Primarily if we consider the text generation task, we only need a `decoder`. 
+-- __postprocessing__: Take the outputs from the model (often logits of embeddings), and format them back to text. 
++- [**tokenizer**](#tokenizers): input natural language text stream, output tokens.
++- [**embedding**](#embedding): maps the tokens into a numerical format so that the model can consume.
++- [**model**](#transformers): the actual LLM model, which takes the embedding and outputs according to the model tasks.
++  - A typical transformer model has a `encoder` (plus `positional encoding`) to encode the input into feature vectors, a `decoder` that takes the features and other inputs to generate outputs.
++  - Primarily if we consider the text generation task, we only need a `decoder`.
++- **postprocessing**: Take the outputs from the model (often logits of embeddings), and format them back to text.
+ 
+ ## Tokenizers
+ 
+-In general, tokenizer split the characters into sequences of tokens. In also handles irregular or illegal input, do normalization (striping whitespace, remove accent chars, lowercasing, etc.).  
++In general, tokenizer split the characters into sequences of tokens. In also handles irregular or illegal input, do normalization (striping whitespace, remove accent chars, lowercasing, etc.).
+ 
+-A simple view is to consider the token as one word, but not always true. Typically, the tokenizer only uses CPU, but not always true for some modern models. 
++A simple view is to consider the token as one word, but not always true. Typically, the tokenizer only uses CPU, but not always true for some modern models.
+ 
+ ```py
+ from tokenizer import Tokenizer
+@@ -64,8 +65,7 @@ print(output.ids)
+ # [27253, 16, 93, 11, 5097, 5, 7961, 5112, 6218, 0, 35]
+ ```
+ 
+-
+-Note that the tokenizer is often associated with the specific model. 
++Note that the tokenizer is often associated with the specific model.
+ 
+ <div class="row mt-3">
+     <div class="col-lg mt-3 mt-md-0">
+@@ -76,11 +76,11 @@ Note that the tokenizer is often associated with the specific model.
+     <a href="https://platform.openai.com/tokenizer">OpenAI tokenizer</a>
+ </div>
+ 
+-
+ ## Embedding
+-The tokenizer generate a sequence of tokens (or token IDs), but the model cannot directly consume them as input. Using an [`embedding`](https://pytorch.org/docs/stable/generated/torch.nn.Embedding.html), which serve as a fixed size dictionary of all tokens. 
+ 
+-In general, we will also add a positional encoding to add an extra understanding of where the input is within the sentence. 
++The tokenizer generate a sequence of tokens (or token IDs), but the model cannot directly consume them as input. Using an [`embedding`](https://pytorch.org/docs/stable/generated/torch.nn.Embedding.html), which serve as a fixed size dictionary of all tokens.
++
++In general, we will also add a positional encoding to add an extra understanding of where the input is within the sentence.
+ 
+ ```py
+ # embedding is a lookup table of size (n_vocab, dim)
+@@ -99,7 +99,8 @@ x = embeddings[token_ids] + pos_encoder[range(len(token_ids))]
+ ```
+ 
+ ## Decoder-only Transformers
+-We focus on the auto-regressive models, or the decoder-only transformer models.   
++
++We focus on the auto-regressive models, or the decoder-only transformer models.
+ 
+ <div class="row mt-3">
+     <div class="col-lg mt-3 mt-md-0">
+@@ -110,51 +111,54 @@ We focus on the auto-regressive models, or the decoder-only transformer models.
+ The embedding is passed through many Transformer blocks, and finally outputs the logits of the vocabulary to generate the next most likely word.
+ 
+ ## Attention Module
+-Consider an intuitive example: we have a set of word keys $k_1, k_2, ..., k_n$ and each word $k_i$ is associated with some feature vector $v_i$, now we have a new word $q$ to query, and we'd like to compute the value vector $v_q = \sum_{i=1}^n a_i v_i$ with some __attention score__ $a_i$, and such $a_i$ represents how similar/relevant is the query to the $i$th word. 
+ 
+-Therefore, let $K\: (n_k\times d_k)$ be the stacked matrix of keys, $V\: (n_k\times d_v)$ be the stacked matrix of value vectors, and $Q: (n_q\times d_v)$ be the stack matrix of queries. We can derive the attention  to be 
++Consider an intuitive example: we have a set of word keys $k_1, k_2, ..., k_n$ and each word $k_i$ is associated with some feature vector $v_i$, now we have a new word $q$ to query, and we'd like to compute the value vector $v_q = \sum_{i=1}^n a_i v_i$ with some **attention score** $a_i$, and such $a_i$ represents how similar/relevant is the query to the $i$th word.
++
++Therefore, let $K\: (n_k\times d_k)$ be the stacked matrix of keys, $V\: (n_k\times d_v)$ be the stacked matrix of value vectors, and $Q: (n_q\times d_v)$ be the stack matrix of queries. We can derive the attention to be
+ 
+ $$A = \text{softmax}(\frac{QK^T}{\sqrt{d_k}}) V$$
+ 
+ (See [an intuitive explanation from Jay Mody](https://jaykmody.com/blog/attention-intuition/), and detailed derivation in _Attention is all You Need_<d_cite key="aswani2017attention" />)
+ 
+ ### Self-attention
+-An interesting discovery is that $k$ and $v$ can come from the same source, and we gets __self attention__, i.e. input sequence attend to itself. which means `attention(q=x, k=x, v=x)`, which is just the similarity of all the words $A = \text{softmax}(XX^T/\sqrt{d_k}) X$ to each other in the sentence, and no trainable parameters to embed the global context. 
+ 
+-Therefore, we can introduce projections for the input $Q = W_Q X, K = W_K X, V=W_VX$ and bring it back to original dimension by $Y = W_{proj} A$, all the weight matrices are now trainable. In practice, we can stack $W_Q, W_K, W_V$ into one matrix to combine the multiplication for a better parallelism. 
++An interesting discovery is that $k$ and $v$ can come from the same source, and we gets **self attention**, i.e. input sequence attend to itself. which means `attention(q=x, k=x, v=x)`, which is just the similarity of all the words $A = \text{softmax}(XX^T/\sqrt{d_k}) X$ to each other in the sentence, and no trainable parameters to embed the global context.
++
++Therefore, we can introduce projections for the input $Q = W_Q X, K = W_K X, V=W_VX$ and bring it back to original dimension by $Y = W_{proj} A$, all the weight matrices are now trainable. In practice, we can stack $W_Q, W_K, W_V$ into one matrix to combine the multiplication for a better parallelism.
+ 
+ ### Multi-head Attention (MHA)
+-To have a truly "large" language model, we want the projections to have more parameters. However, $QK^T$ part of the attention takes 
++
++To have a truly "large" language model, we want the projections to have more parameters. However, $QK^T$ part of the attention takes
+ 
+ $$\text{FLOP} = n_Q\times d_K \times d_K \times n_K$$
+ 
+-Multi-head is introduced to reduce computation, in which we split the $d_K, d_V$ into $h$ "heads", i.e. smaller, separated features vectors. We compute attention on each and stack them back, so that the computation is 
++Multi-head is introduced to reduce computation, in which we split the $d_K, d_V$ into $h$ "heads", i.e. smaller, separated features vectors. We compute attention on each and stack them back, so that the computation is
+ 
+ $$h(n_q\times \frac{d_K}{h} \times\frac{d_K}{h} \times n_K) = \frac{1}{h}\text{FLOP}$$
+ 
+-In implementation, MHA with $N$ heads looks like $A_i = \text{softmax}(\frac{(W_Q^iQ)\cdot (W_K^i K)^T}{\sqrt{d_k}}) W_V^iV$, $MHA = W_O\cdot \text{concat}(A_1, A_2, ..., A_{N})$, where $W_O$ is the weights for output projection. 
++In implementation, MHA with $N$ heads looks like $A_i = \text{softmax}(\frac{(W_Q^iQ)\cdot (W_K^i K)^T}{\sqrt{d_k}}) W_V^iV$, $MHA = W_O\cdot \text{concat}(A_1, A_2, ..., A_{N})$, where $W_O$ is the weights for output projection.
+ 
+-###  Group Query (GQA) and Multi-query (MQA)
++### Group Query (GQA) and Multi-query (MQA)
+ 
+-Instead of using multi-head on all of $Q,K,V$, MQA only use the full multi heads on $Q$. 
++Instead of using multi-head on all of $Q,K,V$, MQA only use the full multi heads on $Q$.
+ 
+ $$A_i = \text{softmax}(\frac{(W_Q^iQ)\cdot (W_K K)^T}{\sqrt{d_k}}) W_VV$$
+ 
+-Note that we only have one weight for $W_K$ and $W_V$, instead of $n$ weights. 
++Note that we only have one weight for $W_K$ and $W_V$, instead of $n$ weights.
+ 
+-GQA uses the similar idea, instead of all $N$ heads of query share the same projected $K, V$, we have $N/d$ heads for $K,V$ and every $d$ Q-heads will share one KV head.   
++GQA uses the similar idea, instead of all $N$ heads of query share the same projected $K, V$, we have $N/d$ heads for $K,V$ and every $d$ Q-heads will share one KV head.
+ 
+ $$A_i = \text{softmax}(\frac{(W_Q^iQ)\cdot (W_K^{\lfloor i/d \rfloor} K)^T}{\sqrt{d_k}}) W_V^{\lfloor i/d\rfloor}V$$
+ 
+ ### Causal Masking
+-For a text generation model, all words should only see words before it. Otherwise, it will be biased towards the known answer. 
+ 
+-One natural way is to mask out the relevance in the context. Which means $0$ for all the keys after the current key. However, we need to pass a `softmax` and have $0$ in the output. We can do this by adding a negative-infinity matrix $M$ to $QK^T$. 
++For a text generation model, all words should only see words before it. Otherwise, it will be biased towards the known answer.
+ 
++One natural way is to mask out the relevance in the context. Which means $0$ for all the keys after the current key. However, we need to pass a `softmax` and have $0$ in the output. We can do this by adding a negative-infinity matrix $M$ to $QK^T$.
+ 
+ ### KV Caching for Casual Inference
+ 
+-For text generation tasks with a transformer model, the inference is done as 
++For text generation tasks with a transformer model, the inference is done as
+ 
+ ```py
+ prompt_tokens = tokenizer.encode(input_text)
+@@ -166,11 +170,12 @@ for _ in range(n_next_tokens):
+ output_tokens = tokenizer.decode(prompt_tokens)
+ ```
+ 
+-Because we always want to generate new tokens based on all previous context. However, in each iteration we only have 1 new token, we are always recomputing the prompt tokens. Considering the computation in `attention` module, the overhead is exponential to the `max_sequence_len`. 
++Because we always want to generate new tokens based on all previous context. However, in each iteration we only have 1 new token, we are always recomputing the prompt tokens. Considering the computation in `attention` module, the overhead is exponential to the `max_sequence_len`.
+ 
+ However, casual inference masks out tokens after the current token. For each queried token, its attention $A, Q, K, V$ are only relevant to previous tokens. Therefore, for each iteration
++
+ - We only need to query the newly generated input.
+-- We reuse all previous $K,V$, concat with the new $k, v$ w.r.t input $x$. 
++- We reuse all previous $K,V$, concat with the new $k, v$ w.r.t input $x$.
+ 
+ The inference becomes
+ 
+@@ -195,7 +200,6 @@ for _ in range(n_next_tokens):
+ output_tokens = tokenizer.decode(prompt_tokens)
+ ```
+ 
+-
+ ### Putting all Together
+ 
+ ```py
+@@ -209,7 +213,7 @@ def forward(
+     mask: Optional[torch.Tensor],
+ ):
+     bsz, seqlen, _ = x.shape
+-    
++
+     # projections
+     xq, xk, xv = self.wq(x), self.wk(x), self.wv(x)
+ 
+@@ -242,9 +246,9 @@ def forward(
+     )  # (bs, cache_len + seqlen, n_local_heads, head_dim)
+ 
+     xq = xq.transpose(1, 2)  # (bs, n_local_heads, seqlen, head_dim)
+-    keys = keys.transpose(1, 2)  
++    keys = keys.transpose(1, 2)
+     # (bs, n_local_heads, cache_len + seqlen, head_dim)
+-    values = values.transpose(1, 2)  
++    values = values.transpose(1, 2)
+     # (bs, n_local_heads, cache_len + seqlen, head_dim)
+ 
+     # self-attention
+@@ -260,7 +264,8 @@ def forward(
+ ```
+ 
+ ## Feed forward Network
+-Simple fully connected linear layers to expand and contract the embedding dimension, so that we have more trainable weights for the context. For LLaMA3 the design is a bit different to have more efficiency. 
++
++Simple fully connected linear layers to expand and contract the embedding dimension, so that we have more trainable weights for the context. For LLaMA3 the design is a bit different to have more efficiency.
+ 
+ ```py
+ # https://github.com/meta-llama/llama3/blob/main/llama/model.py
+@@ -297,25 +302,25 @@ class FeedForward(nn.Module):
+ 
+ [All About Transformer Inference - How to Scale Your Model with TPU](https://jax-ml.github.io/scaling-book/inference/)
+ 
+-During inference, we are optimizing for time to first token (TTFT) and tokens per second (TPS). Without changing the actual computations, we want fully use the hardware, i.e. better model FLOPS utilization (MFU) and model bandwidth utilization (MBU) __at the same time__. 
+-
+-On a typical hardware (CPU/GPU/TPU), we have a memory hierarchy, where data needs to be loaded from the large-sized memory (often HBM) to the much smaller cache/register (SBUF) for computation. The data movement can be seen as executed by DMA engines, and can be overlapped with computations. Therefore, the theoretical performance is `max(data_movement_time, computation_time)`. This is called the [roofline model](https://jax-ml.github.io/scaling-book/roofline/). 
++During inference, we are optimizing for time to first token (TTFT) and tokens per second (TPS). Without changing the actual computations, we want fully use the hardware, i.e. better model FLOPS utilization (MFU) and model bandwidth utilization (MBU) **at the same time**.
+ 
++On a typical hardware (CPU/GPU/TPU), we have a memory hierarchy, where data needs to be loaded from the large-sized memory (often HBM) to the much smaller cache/register (SBUF) for computation. The data movement can be seen as executed by DMA engines, and can be overlapped with computations. Therefore, the theoretical performance is `max(data_movement_time, computation_time)`. This is called the [roofline model](https://jax-ml.github.io/scaling-book/roofline/).
+ 
+ ### Q, K, V projection
+-Q, K, V projection $[Q_p, K_p, V_p] = [W_Q\cdot Q, W_K\cdot K, W_V\cdot V]$ where 
++
++Q, K, V projection $[Q_p, K_p, V_p] = [W_Q\cdot Q, W_K\cdot K, W_V\cdot V]$ where
+ 
+ - $Q,K,V: (1, H, S)$, $S$ is sequence length, $H$ is hidden dimension size
+-- $W_Q, W_K, W_V: (N_{heads}, I, H)$, $N_{heads}$ is number of heads, $I$ is intermediate dimension size. 
++- $W_Q, W_K, W_V: (N_{heads}, I, H)$, $N_{heads}$ is number of heads, $I$ is intermediate dimension size.
+ - $Q_p, K_p, V_p: (N_{heads}, I, S)$ are the projected multi-head values
+ 
+ So total flop is $3N_{heads} \times 2IHS = 6N_{heads}IHS$, data movement is $N_{bytes}\times(HS+N_{heads}IH+BF)$, where $N_{bytes}$ depends on dtype.
+ 
+-### Flash Attention 
++### Flash Attention
+ 
+-[Flash Attention](https://github.com/Dao-AILab/flash-attention)<d-cite key="dao2022flashattention" /> is a widely-used method for optimizing attention computations. We will only talk about forward pass here. 
++[Flash Attention](https://github.com/Dao-AILab/flash-attention)<d-cite key="dao2022flashattention" /> is a widely-used method for optimizing attention computations. We will only talk about forward pass here.
+ 
+-In the attention computation, we are doing two large matmul, one division (which can be pre-applied) and one softmax. In which we have to write the result back to HBM for each operation. A natural way to improve is to use the fused operations, i.e. re-order/design the computations so that we do not write intermediate results back to HBM. Fusing matmuls is easy: assuming SBUF can fit at least 3 hidden vectors, we partition $QKV$ by the sequence dim. If we ignore the softmax part, we have two matmuls and fuse the computation of $S_P$ tokens:  $[(S_P , I) \times (I, S_P)]\times (S_P, I) = (S_P, S_P)\times (S_P, I) = (S_P, I)$
++In the attention computation, we are doing two large matmul, one division (which can be pre-applied) and one softmax. In which we have to write the result back to HBM for each operation. A natural way to improve is to use the fused operations, i.e. re-order/design the computations so that we do not write intermediate results back to HBM. Fusing matmuls is easy: assuming SBUF can fit at least 3 hidden vectors, we partition $QKV$ by the sequence dim. If we ignore the softmax part, we have two matmuls and fuse the computation of $S_P$ tokens: $[(S_P , I) \times (I, S_P)]\times (S_P, I) = (S_P, S_P)\times (S_P, I) = (S_P, I)$
+ 
+ Now, consider the softmax, for numerical stability we have to use standard normalized softmax
+ 
+@@ -333,4 +338,4 @@ $$\exp(\mathbf x_1 - m)= \exp(\mathbf x_1 - m_1 + m_1 - m) = \exp(\mathbf x_1 -
+ 
+ $$\sum \exp(\mathbf x_1 - m) = \sum  \exp(\mathbf x_1 - m_1)\exp(m_1 - m) = \exp(m_1 - m)\sum \exp(\mathbf x_1 - m_1)$$
+ 
+-Which means that for each partition, we only need to keep $\exp(\mathbf x_1 - m_1), m_1$ and the denominator $l_1 := \exp(\mathbf x_1 - m_1)$. Also, since $m_1, l_1$ are scalar multiplication, we would postbone the reduction after the matmuls. 
+\ No newline at end of file
++Which means that for each partition, we only need to keep $\exp(\mathbf x_1 - m_1), m_1$ and the denominator $l_1 := \exp(\mathbf x_1 - m_1)$. Also, since $m_1, l_1$ are scalar multiplication, we would postbone the reduction after the matmuls.
+diff --git a/_notes/moe.md b/_notes/moe.md
+index dee5a8e..3b836c5 100644
+--- a/_notes/moe.md
++++ b/_notes/moe.md
+@@ -21,7 +21,8 @@ toc:
+ [MoE Explained by HuggingFace](https://huggingface.co/blog/moe)
+ 
+ ## Overview
+-MoE layer is a replacement for the FFN (dense MLP) layer in LLMs. Compared to one dense feed forward layer, MoE gives 
++
++MoE layer is a replacement for the FFN (dense MLP) layer in LLMs. Compared to one dense feed forward layer, MoE gives
+ 
+ - Better scalability on number of parameters
+ - Much faster pre-training
+@@ -33,16 +34,17 @@ MoE layer is a replacement for the FFN (dense MLP) layer in LLMs. Compared to on
+     </div>
+ </div>
+ 
+-MoE layer replaces the dense linear layers with a weighted sum of experts. Where each `expert` is a small FFN, and the weights is provided by the `router` layer. Intuitively, instead of having one big "genius", MoE layer uses several experts and a router to decide which expert will answer. 
++MoE layer replaces the dense linear layers with a weighted sum of experts. Where each `expert` is a small FFN, and the weights is provided by the `router` layer. Intuitively, instead of having one big "genius", MoE layer uses several experts and a router to decide which expert will answer.
+ 
+ ## Mixtral
+-Mixtral <d-cite key="mixtral" /> is one of the earliest MoE model. The router network is defined as 
++
++Mixtral <d-cite key="mixtral" /> is one of the earliest MoE model. The router network is defined as
+ 
+ $$G(x) = \text{softmax}(\text{topK}(x\cdot W_g))$$
+ 
+-the router is a linear layer, with topK to force it only have K experts, and softmax activation to make the weight normalized. 
++the router is a linear layer, with topK to force it only have K experts, and softmax activation to make the weight normalized.
+ 
+-Each expert is just a FFN layer, Mixtral uses SwiGLU from Llama2 <d-cite key="llama2" />. 
++Each expert is just a FFN layer, Mixtral uses SwiGLU from Llama2 <d-cite key="llama2" />.
+ 
+ ```py
+ def forward(self, inputs: torch.Tensor) -> torch.Tensor:
+@@ -62,26 +64,28 @@ def forward(self, inputs: torch.Tensor) -> torch.Tensor:
+     return results
+ ```
+ 
+-Mathematically, MoE layer is considered as a "sparse" FFN. If we concatenate all experts, it will be dense linear layers with $(H, I\times n)$ parameters. For each token feature vector, we mask out $(n-k)/n$ rows or columns, where the masked rows are chosen by the router. Therefore, compared to dense models with the same number of parameters, the MoE will only take $k/n$ computations plus some routing overhead (which is small compared to MLP matmuls). 
++Mathematically, MoE layer is considered as a "sparse" FFN. If we concatenate all experts, it will be dense linear layers with $(H, I\times n)$ parameters. For each token feature vector, we mask out $(n-k)/n$ rows or columns, where the masked rows are chosen by the router. Therefore, compared to dense models with the same number of parameters, the MoE will only take $k/n$ computations plus some routing overhead (which is small compared to MLP matmuls).
+ 
+ ### Case: Mixtral8x7B
++
+ Mixtral8x7B (32 decoder layers) model parameters vs Llama2 70B (80 decoder layers)
+ 
+-|     | Mixtral shape | n_params | Llama2 70B shape | n_params |
+-| --- | ---           | --- |  --- | --- |
+-| attn K proj | (4096, 1024) | 4M | (8192, 1024) | 8M |
+-| attn Q proj |  (4096, 4096) | 16M | (8192, 8192) | 64M |
+-| attn V proj |  (4096, 4096) | 16M | (8192, 8192) | 64M |
+-| attn out proj |  (4096, 4096) | 16M | (8192, 8192) | 64M |
+-| attn normalization | (4096, ) | 4k | (8192, ) | 8k |
+-| FFN router |  (4096, 8) | 32k | - | -  |
+-| FFN gate proj |(4096, 14336, 8) | 448M<br>(112M active) | (8192, 28672) | 224M | 
+-| FFN up proj | (4096, 14336, 8) | 448M<br>(112M active) | (8192, 28672) | 224M | 
+-| FFN down proj |  (14336, 4096, 8) | 448M<br>(112M active) | (28672, 8192) | 224M | 
+-| FFN normalization |  (4096, ) | 4k | (8192, ) | 8k |
+-| total | | $32 \times 1.4 \approx 42$B<br>$32 \times 0.388 \approx 12$B activated | | $80\times 0.872\approx 54$B
+-
+-Note that Mixtral has similar number of parameters. However, Mixtral only uses $2/8$ of the weights, hence the FFN computations are far smaller. 
++|                    | Mixtral shape    | n_params                                                               | Llama2 70B shape | n_params                    |
++| ------------------ | ---------------- | ---------------------------------------------------------------------- | ---------------- | --------------------------- |
++| attn K proj        | (4096, 1024)     | 4M                                                                     | (8192, 1024)     | 8M                          |
++| attn Q proj        | (4096, 4096)     | 16M                                                                    | (8192, 8192)     | 64M                         |
++| attn V proj        | (4096, 4096)     | 16M                                                                    | (8192, 8192)     | 64M                         |
++| attn out proj      | (4096, 4096)     | 16M                                                                    | (8192, 8192)     | 64M                         |
++| attn normalization | (4096, )         | 4k                                                                     | (8192, )         | 8k                          |
++| FFN router         | (4096, 8)        | 32k                                                                    | -                | -                           |
++| FFN gate proj      | (4096, 14336, 8) | 448M<br>(112M active)                                                  | (8192, 28672)    | 224M                        |
++| FFN up proj        | (4096, 14336, 8) | 448M<br>(112M active)                                                  | (8192, 28672)    | 224M                        |
++| FFN down proj      | (14336, 4096, 8) | 448M<br>(112M active)                                                  | (28672, 8192)    | 224M                        |
++| FFN normalization  | (4096, )         | 4k                                                                     | (8192, )         | 8k                          |
++| total              |                  | $32 \times 1.4 \approx 42$B<br>$32 \times 0.388 \approx 12$B activated |                  | $80\times 0.872\approx 54$B |
++
++Note that Mixtral has similar number of parameters. However, Mixtral only uses $2/8$ of the weights, hence the FFN computations are far smaller.
+ 
+ ## Load Balancing
+-We have the intuition that each expert model is an expert of some areas of knowledge. However, this is not true. To make the model scalable and efficient, we want a more balanced workload (number of tokens) among the experts. For training, this can be done through auxiliary loss and expert capacity (expert drops tokens if the assigned tokens exceeds its capacity). 
++
++We have the intuition that each expert model is an expert of some areas of knowledge. However, this is not true. To make the model scalable and efficient, we want a more balanced workload (number of tokens) among the experts. For training, this can be done through auxiliary loss and expert capacity (expert drops tokens if the assigned tokens exceeds its capacity).
+diff --git a/_notes/parallelism.md b/_notes/parallelism.md
+index 44f411a..5f8971a 100644
+--- a/_notes/parallelism.md
++++ b/_notes/parallelism.md
+@@ -26,42 +26,40 @@ toc:
+   - name: "Case Study: llama3-70b"
+ ---
+ 
+-We assume that the accelerators uses the conventional memory hierarchy model. Where CPU - accelerator data movement is slow, so that the accelerator needs to load all data at the beginning onto its dedicated high bandwidth memory (HBM). Then, for computations, data will be loaded from HBM to some small cache/registers. 
++We assume that the accelerators uses the conventional memory hierarchy model. Where CPU - accelerator data movement is slow, so that the accelerator needs to load all data at the beginning onto its dedicated high bandwidth memory (HBM). Then, for computations, data will be loaded from HBM to some small cache/registers.
+ 
+-We consider the following metrics of an accelerator 
++We consider the following metrics of an accelerator
+ 
+-- HBM size measured in GiB. 
+-- HBM throughput measured in GiB/s. 
+-- Computational capacity measured in FLOP/s.  
+-- Collectives operations overhead, this will depends on the connectivity topology (and hence algorithms). 
++- HBM size measured in GiB.
++- HBM throughput measured in GiB/s.
++- Computational capacity measured in FLOP/s.
++- Collectives operations overhead, this will depends on the connectivity topology (and hence algorithms).
+ 
+ We consider a ML workload in 3 aspects
+ 
+ - Peak memory (HBM/VRAM/DRAM) usage in GiB
+-- Model data movement in GiB, how many data are needed to read/write through HBM. 
+-- Computations in FLOP. The majority of workloads will be matmuls, we often omit non-matmul computations such as activations and normalizations. 
+-
+-
++- Model data movement in GiB, how many data are needed to read/write through HBM.
++- Computations in FLOP. The majority of workloads will be matmuls, we often omit non-matmul computations such as activations and normalizations.
+ 
+ ## [Sharding Matrices](https://jax-ml.github.io/scaling-book/sharding/)
+ 
+-When we consider distributing computations, essentially we want to shard matmuls across devices, and collect their results. Consider a matmul 
++When we consider distributing computations, essentially we want to shard matmuls across devices, and collect their results. Consider a matmul
+ 
+ $$A[I, J]\cdot B[J, K] = C[I, K]$$
+ 
+-$I, K$ are the outer dimension, and $J$ is the inner dimension or contraction dimension. Also note that all batched matmuls can be considered as stacking the batching dimensions on the outer dimensions. 
++$I, K$ are the outer dimension, and $J$ is the inner dimension or contraction dimension. Also note that all batched matmuls can be considered as stacking the batching dimensions on the outer dimensions.
+ 
+-The take away is that: 
++The take away is that:
+ 
+ - Sharding on outer dimensions does not need any overhead. $A[I_X, J]\cdot B[J, K_Y] = C[I_X, K_Y]$
+-- Sharding on inner dimensions computes a partial sum, hence need a all reduce on $C$. 
+-$\text{AllReduce}(A[I, J_X]\cdot B[J_X, K]) = C[I, K]$
++- Sharding on inner dimensions computes a partial sum, hence need a all reduce on $C$.
++  $\text{AllReduce}(A[I, J_X]\cdot B[J_X, K]) = C[I, K]$
+ 
+-## LLM Workloads 
++## LLM Workloads
+ 
+ [Llama3 as an example](llama.md)
+ 
+-In a nutshell, LLM workloads can be considered as $N$ decoder layers. For each decoder, we consider the following operations, underline indicates an "inner" dimension (need reduction/gather). 
++In a nutshell, LLM workloads can be considered as $N$ decoder layers. For each decoder, we consider the following operations, underline indicates an "inner" dimension (need reduction/gather).
+ 
+ - `normalize` $(B, S, \underline{H}) \rightarrow (B, S, \underline{H})$
+ - `QKV_proj`: $(B, S, \underline{H}) \times (\underline{H}, (n_Q+ n_{KV} + n_{KV})\cdot d)\rightarrow (B, S, (n_Q+n_{KV}+n_{KV}), d)$
+@@ -74,12 +72,12 @@ In a nutshell, LLM workloads can be considered as $N$ decoder layers. For each d
+ At the beginning and ending, we will also have the text embedding layer and output sampling layer. Which maps the input tokens from vocabulary to hidden dimension, and verse versa. Note that the vocabulary size $vocab$, in the input and output, is an index to its one-hot vector.
+ 
+ - `embed` $(B, S, \underline{vocab})\rightarrow (\underline{vocab}, H)$
+-- `lm_head` $(B, S, \underline{H})\rightarrow (\underline{H}, vocab)$ 
++- `lm_head` $(B, S, \underline{H})\rightarrow (\underline{H}, vocab)$
+ 
+ We need to store the following tensors on HBM (omit some smaller normalizations)
+ 
+ - `inputs/outputs` $(B, S)$
+-- `embedding_w` $(\underline{vocab}, H)$ 
++- `embedding_w` $(\underline{vocab}, H)$
+ - `QKV_w` $(\underline{H}, (n_Q+ n_K + n_V)\cdot d) \times \text{n\_layers}$
+ - `out_w` $(\underline{(n_Q+ n_K + n_V)\cdot d} \times H) \times \text{n\_layers}$
+ - `up_w` and `gate_w` $(\underline{H}, I)\times \text{n\_layers}$
+@@ -92,64 +90,67 @@ For parallelism, we are sharding across some of these dimensions, with the consi
+ - Reduce HBM pressure so that we can fit data onto each device.
+ - Fully utilize computation cores of the devices.
+ - Reduce latency for single prompt input.
+-- Minimize possible overhead from communication collectives or replicated computations. 
++- Minimize possible overhead from communication collectives or replicated computations.
+ 
+-Any specific consideration is that the majority of computations are matmuls of shape $(B, S, H)\times (H, I) \rightarrow (B, S, I)$ (without considering bias, activation, normalization, etc.). The computational intensity is $\frac{2BSHI}{2HI} \approx BS$. For prefill stage, $BS$ are typically larger than arithmetic intensity. Thus, we are compute bound. However, for decode stage, $S_d = 1$, so that to fully use the device, we want to increase batch size to be closer be the arithmetic intensity. 
++Any specific consideration is that the majority of computations are matmuls of shape $(B, S, H)\times (H, I) \rightarrow (B, S, I)$ (without considering bias, activation, normalization, etc.). The computational intensity is $\frac{2BSHI}{2HI} \approx BS$. For prefill stage, $BS$ are typically larger than arithmetic intensity. Thus, we are compute bound. However, for decode stage, $S_d = 1$, so that to fully use the device, we want to increase batch size to be closer be the arithmetic intensity.
+ 
+ ## Shard on inputs
+-Shard on the batch size $B$ or sequence length $S$. In general, each device will get a copy of model weight. So shard on inputs does not help much for reducing HBM pressure. 
+ 
++Shard on the batch size $B$ or sequence length $S$. In general, each device will get a copy of model weight. So shard on inputs does not help much for reducing HBM pressure.
+ 
+ ### Data Parallel (DP)
++
+ Shard on batches. In general, data parallel is trivial and requires no communications if there's no batch normalization.
+ 
+-- Throughput: linearly scales with number of devices. 
+-- Latency: dose not reduce latency since computation per prompt is the same. 
+-- No CC overhead. 
++- Throughput: linearly scales with number of devices.
++- Latency: dose not reduce latency since computation per prompt is the same.
++- No CC overhead.
+ 
+-### Sequence Parallel (SP) 
+-One special case of data parallel is shard on the sequence length $S$. Typically we can only do this on prefill stage (context encoding) since the prefill sequence length $S = S_p$ is typically long, while at decoding stage (token generation), $S = 1$. 
++### Sequence Parallel (SP)
+ 
+-- HBM usage: does not help much. 
+-- Throughput: linearly scales when sharded $S$ is long enough. If $S$ is too small, typically the projections will be memory bound and SP does not work. 
+-- Latency: linearly scales when sharded $S$ is long enough. 
++One special case of data parallel is shard on the sequence length $S$. Typically we can only do this on prefill stage (context encoding) since the prefill sequence length $S = S_p$ is typically long, while at decoding stage (token generation), $S = 1$.
++
++- HBM usage: does not help much.
++- Throughput: linearly scales when sharded $S$ is long enough. If $S$ is too small, typically the projections will be memory bound and SP does not work.
++- Latency: linearly scales when sharded $S$ is long enough.
+ - CC overhead: reduction on self-attention matmul.
+ 
+-## Shard on weights: Tensor Parallel (TP) 
+-Shard on the model weights. In general, this helps to reduce HBM usage and makes computations faster. 
+-TP is often case by case.
++## Shard on weights: Tensor Parallel (TP)
+ 
+-Some strategies for TP 
++Shard on the model weights. In general, this helps to reduce HBM usage and makes computations faster.
++TP is often case by case.
+ 
+- - In general, shard on outer dimensions to avoid collectives.
+- - For several successive matmuls, we way not need to gather outputs. 
+- - Consider the balance between collective overhead (for inner dimensions) and shard on very small dimensions (not saturating compute). 
+- - In some cases, replicate operations will be faster than collectives. 
++Some strategies for TP
+ 
++- In general, shard on outer dimensions to avoid collectives.
++- For several successive matmuls, we way not need to gather outputs.
++- Consider the balance between collective overhead (for inner dimensions) and shard on very small dimensions (not saturating compute).
++- In some cases, replicate operations will be faster than collectives.
+ 
+ TP scaling characteristics
+ 
+ - HBM usage: each device takes $1/\text{TP}$ model weights, with some possible overhead.
+-- Throughput: linearly scales when TP is small. When TP is large, we typically see more overhead and device FLOP utilizations will drop. 
+-- Latency: linearly scales when TP is small. 
+-- CC overhead: case by case, overall cannot avoid CC overhead. 
++- Throughput: linearly scales when TP is small. When TP is large, we typically see more overhead and device FLOP utilizations will drop.
++- Latency: linearly scales when TP is small.
++- CC overhead: case by case, overall cannot avoid CC overhead.
+ 
+ ### Sharding Attention
+-Consider the official llama3 modeling code for [attention module](https://github.com/meta-llama/llama3/blob/main/llama/model.py#L100-L127). 
+ 
+-For multi-head attention (MHA) each Q,K,V head is computed in parallel. Each of $Q,K,V$ head are of the shape $(B, n, S, d)$ where $B$ is batch size, $n$ is number of heads, $S$ is sequence length, $d$ is head dim (which is often small). Therefore, we can directly shard the computations by the head, without many overhead. 
++Consider the official llama3 modeling code for [attention module](https://github.com/meta-llama/llama3/blob/main/llama/model.py#L100-L127).
+ 
+-For group query attention (GQA), each K and V heads will be shared for multiple Q heads by broadcasting the same K and V head to the same number of Q heads. For `llama-3-70b`, we have $n_Q=64, n_K=8, n_V=8$, thus 8 Q heads share 1 K and 1 V head. Consider TP8, each device gets $\underline{n}_{Q} = 8, \underline{n}_{K} = 1, \underline{n}_V=1$. However, if we go TP16, we still need K and V head exist on each device to do the computation, i.e. each device gets $\underline{n}_{Q} = 4, \underline{n}_{K} = 1, \underline{n}_V=1$. Therefore, we have to replicate K and V head and introduces overhead. 
++For multi-head attention (MHA) each Q,K,V head is computed in parallel. Each of $Q,K,V$ head are of the shape $(B, n, S, d)$ where $B$ is batch size, $n$ is number of heads, $S$ is sequence length, $d$ is head dim (which is often small). Therefore, we can directly shard the computations by the head, without many overhead.
+ 
++For group query attention (GQA), each K and V heads will be shared for multiple Q heads by broadcasting the same K and V head to the same number of Q heads. For `llama-3-70b`, we have $n_Q=64, n_K=8, n_V=8$, thus 8 Q heads share 1 K and 1 V head. Consider TP8, each device gets $\underline{n}_{Q} = 8, \underline{n}_{K} = 1, \underline{n}_V=1$. However, if we go TP16, we still need K and V head exist on each device to do the computation, i.e. each device gets $\underline{n}_{Q} = 4, \underline{n}_{K} = 1, \underline{n}_V=1$. Therefore, we have to replicate K and V head and introduces overhead.
+ 
+ ### Expert Parallel (EP)
+-For [Mixture of Expert (MoE) architecture](https://huggingface.co/blog/moe), the big feed forward network is replaced with many small MLPs (experts) . Given the input to FFN $(B, S, H)$, each token $s\in S$ goes to a small number of experts. Because the experts are small, TP sharding on the already small dimensions will cause more overhead. Instead, each device will get a few unsharded experts. Since each device gets the full $(B, S, H)$ input, each device can compute the router and only keeps tokens that will go through its experts. After the computations, we will do a partial sum on the full $S$ to gather all results. 
+ 
+-For EP, we need to consider capacity factor, i.e. how imbalance the tokens are distributed to the experts. If the routing is imbalanced, some devices will get much more tokens to process, hence synchronization overhead. 
++For [Mixture of Expert (MoE) architecture](https://huggingface.co/blog/moe), the big feed forward network is replaced with many small MLPs (experts) . Given the input to FFN $(B, S, H)$, each token $s\in S$ goes to a small number of experts. Because the experts are small, TP sharding on the already small dimensions will cause more overhead. Instead, each device will get a few unsharded experts. Since each device gets the full $(B, S, H)$ input, each device can compute the router and only keeps tokens that will go through its experts. After the computations, we will do a partial sum on the full $S$ to gather all results.
+ 
++For EP, we need to consider capacity factor, i.e. how imbalance the tokens are distributed to the experts. If the routing is imbalanced, some devices will get much more tokens to process, hence synchronization overhead.
+ 
+ ## Pipeline Parallel (PP)
+-Shard on the number of layers. Each device will only compute a few layers of the model. At each time step, the device will receive the input data from previous pipeline stage (device), compute the layers, and then send the result to the next stage. However, PP requires the stages get balanced amount of work, otherwise all devices have to wait on the slowest stage and introduce huge overhead. 
++
++Shard on the number of layers. Each device will only compute a few layers of the model. At each time step, the device will receive the input data from previous pipeline stage (device), compute the layers, and then send the result to the next stage. However, PP requires the stages get balanced amount of work, otherwise all devices have to wait on the slowest stage and introduce huge overhead.
+ 
+ For LLMs, the majority of the workload are decoder layers, where input and output shapes are both $(B, S, H)$. For token generation, $S = 1$ so that we that the send/recv communication is typically small. Also, token generation is auto-regressive, as illustrated below:
+ 
+@@ -161,28 +162,32 @@ For LLMs, the majority of the workload are decoder layers, where input and outpu
+ 
+ The overhead for pipelines are
+ 
+-- The idle time at the beginning and the end. For token generation, since the number of generated tokens are typically very large. This overhead is really small. 
+-- Any load imbalance among stages where all other stages are idle. 
+-- Send/recv communications in between stage. However, note that send buffer (input) and recv buffer (output) are different, so we can hide this overhead if send and recv are async. 
++- The idle time at the beginning and the end. For token generation, since the number of generated tokens are typically very large. This overhead is really small.
++- Any load imbalance among stages where all other stages are idle.
++- Send/recv communications in between stage. However, note that send buffer (input) and recv buffer (output) are different, so we can hide this overhead if send and recv are async.
+ - The number of batches have to be greater or equal to the number of stages.
+ 
+ PP scaling characteristics
+-- HBM usage: each device takes $1/\text{PP}$ model weights and $1/\text{PP}$ KV cache. 
++
++- HBM usage: each device takes $1/\text{PP}$ model weights and $1/\text{PP}$ KV cache.
+ - Throughput: linearly scales. However, with more PP stages, we need larger batch size, and hence large KV cache. Also, keeping a balanced workload will be harder for too many PP stages.
+-- Latency: does not help.  
+-- CC overhead: send/recv. 
++- Latency: does not help.
++- CC overhead: send/recv.
+ 
+ ### Sequence Pipeline Parallel (SPP)
+-For prefill, similar to SP, partition the input tokens into chunks and do pipeline parallel on the chunks. Compared to token generation, typically the idling time at the beginning and the end will be larger. Since the number of chunks can be partitioned is typically way smaller than the number of generated tokens. 
++
++For prefill, similar to SP, partition the input tokens into chunks and do pipeline parallel on the chunks. Compared to token generation, typically the idling time at the beginning and the end will be larger. Since the number of chunks can be partitioned is typically way smaller than the number of generated tokens.
+ 
+ ## Mixing Parallelism
+-In general, we can mix shard on inputs (DP), shard on weights (TP), and shard on layers (PP), such that $TP\times DP\times PP$ equals the number of devices. 
+ 
+-Let $\text{HBM}$ be the total HBM pressure if we run it on a single device, then the minimal per-device HBM pressure (assume no dominated replication) will be $\text{HBM} / TP / PP$. 
++In general, we can mix shard on inputs (DP), shard on weights (TP), and shard on layers (PP), such that $TP\times DP\times PP$ equals the number of devices.
++
++Let $\text{HBM}$ be the total HBM pressure if we run it on a single device, then the minimal per-device HBM pressure (assume no dominated replication) will be $\text{HBM} / TP / PP$.
+ 
+ Let $T$ be the latency for computing one prompt on a single device, then the minimal per prompt latency (assume 0 overhead in parallelism) will be $T / TP$.
+ 
+ ## Case Study: `llama3-70b`
++
+ `llama3-70b`'s parameters are
+ 
+ ```json
+@@ -198,7 +203,7 @@ Let $T$ be the latency for computing one prompt on a single device, then the min
+ }
+ ```
+ 
+-So the HBM usage is 
++So the HBM usage is
+ 
+ {% highlight python %}
+ {% include_relative scripts/llama3_modeling.py %}
+@@ -206,25 +211,22 @@ So the HBM usage is
+ 
+ Consider the following accelerator server setup on AWS EC2: `p5.48xlarge` ([NVIDIA DGX H100 System](https://docs.nvidia.com/dgx/dgxh100-user-guide/introduction-to-dgxh100.html)) vs `trn2.48xlarge` ([Trainium2 server](https://awsdocs-neuron.readthedocs-hosted.com/en/latest/general/arch/neuron-hardware/trn2-arch.html#aws-trn2-arch)). They offer similar level of FLOPS, but the device configurations are different:
+ 
+-
+-| | `p5.48xlarge` | `trn2.48xlarge`|
+-| --- | --- | --- |
+-| Number of devices | 8x `H100`   | 64x `trn2 core` |
+-| HBM size  | 80Gb | 24Gb |
+-| HBM-cache bandwidth | 3350Gbs  | 720 Gbs | 
+-| bf16 FLOPS | * 989T | 153.6T | 
+-| arithmetic intensity (FLOP/byte) | 295.2 | 213.3 |
+-
+- \* For sparse compute, `H100` can deliver 1900T FLOPS
+-
+-
+-
+-|   | `p5.48xlarge` |  | `trn2.48xlarge`| |
+-| --- | --- | --- | --- | --- |
+-| Config |  TP8 | TP4 DP2 | TP64 | TP8 DP8 | 
+-| weight size (Gb)  |16.74 | 33.48 | 2.64Gb | 16.74 | 
+-| per token KV cache (Mb)  | 0.039 | 0.078 |0.039 | 0.039 |
+-| max cached tokens (k)  | 1600 | 590 | 545 | 185 |
+-| max B for 2.5k context | 640 | 236 | 218 | 74 |
+-
+-From the table, we can observe a main limitation of `trn2.48xl` setup. For TP64, without considering the much larger communication overhead, we have to replicate 8 times for the weights loading and computations for K, V head projection, while for TP8 DP8, the maximum batch size is too small to get close to compute bound. 
+\ No newline at end of file
++|                                  | `p5.48xlarge` | `trn2.48xlarge` |
++| -------------------------------- | ------------- | --------------- |
++| Number of devices                | 8x `H100`     | 64x `trn2 core` |
++| HBM size                         | 80Gb          | 24Gb            |
++| HBM-cache bandwidth              | 3350Gbs       | 720 Gbs         |
++| bf16 FLOPS                       | \* 989T       | 153.6T          |
++| arithmetic intensity (FLOP/byte) | 295.2         | 213.3           |
++
++\* For sparse compute, `H100` can deliver 1900T FLOPS
++
++|                         | `p5.48xlarge` |         | `trn2.48xlarge` |         |
++| ----------------------- | ------------- | ------- | --------------- | ------- |
++| Config                  | TP8           | TP4 DP2 | TP64            | TP8 DP8 |
++| weight size (Gb)        | 16.74         | 33.48   | 2.64Gb          | 16.74   |
++| per token KV cache (Mb) | 0.039         | 0.078   | 0.039           | 0.039   |
++| max cached tokens (k)   | 1600          | 590     | 545             | 185     |
++| max B for 2.5k context  | 640           | 236     | 218             | 74      |
++
++From the table, we can observe a main limitation of `trn2.48xl` setup. For TP64, without considering the much larger communication overhead, we have to replicate 8 times for the weights loading and computations for K, V head projection, while for TP8 DP8, the maximum batch size is too small to get close to compute bound.
+diff --git a/_notes/trainium.md b/_notes/trainium.md
+index a7ca5e4..6ad8256 100644
+--- a/_notes/trainium.md
++++ b/_notes/trainium.md
+@@ -25,21 +25,23 @@ toc:
+ Based on [Stanford CS149 Assignment](https://github.com/stanford-cs149/asst4-trainium), [:simple-amazon: NKI kernel Docs](https://awsdocs-neuron.readthedocs-hosted.com/en/latest/general/nki/index.html)
+ 
+ ## [Trainium Hardware Architecture](https://awsdocs-neuron.readthedocs-hosted.com/en/latest/general/nki/trainium_inferentia2_arch.html)
++
+ <div class="row mt-3">
+     <div class="col-lg mt-3 mt-md-0">
+         {% include figure.liquid path="assets/notes/neuroncore.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+     </div>
+ </div>
+ 
+-- __HBM__: High bandwidth memory, device memory. Host to device should be managed by ML framework or external of NKI kernel. 
+-- __SBUF__: State buffer. Software-managed on-chip SRAM. In NKI programming, on-chip SRAM is not a hardware managerd "cache", __HBM to SBUF needs explicit `load` and `store`.__ 
+-- __PSUM__: Partial Sum Buffer, a small, dedicated memory designed for storing matrix multiplication results. 
+-- __Tensor Engine__: for matmuls, or other operators that can be executed as matmuls. The engine has 128x128 systolic processing elements, which streams input data from SBUF and write output to PSUM. 
+-- __Vector Engine__: for vector operations that depends on multiple elements from input tensors (vector reduction, element-wise binary operations). VectorE consists of 128 parallel vector lanes. 
+-- __Scaler Engine__: for element-wise operations, where every element in the output tensor only depends on one element of the input tensor. Usually used for hardware-accelerated activation functions. ScalarE consists of 128 parallel vector lanes. 
+-- __GpSimd Engine__: for general SIMD operations. Basically a 8-core CPU, with 512-bit vector machine. 
++- **HBM**: High bandwidth memory, device memory. Host to device should be managed by ML framework or external of NKI kernel.
++- **SBUF**: State buffer. Software-managed on-chip SRAM. In NKI programming, on-chip SRAM is not a hardware managerd "cache", **HBM to SBUF needs explicit `load` and `store`.**
++- **PSUM**: Partial Sum Buffer, a small, dedicated memory designed for storing matrix multiplication results.
++- **Tensor Engine**: for matmuls, or other operators that can be executed as matmuls. The engine has 128x128 systolic processing elements, which streams input data from SBUF and write output to PSUM.
++- **Vector Engine**: for vector operations that depends on multiple elements from input tensors (vector reduction, element-wise binary operations). VectorE consists of 128 parallel vector lanes.
++- **Scaler Engine**: for element-wise operations, where every element in the output tensor only depends on one element of the input tensor. Usually used for hardware-accelerated activation functions. ScalarE consists of 128 parallel vector lanes.
++- **GpSimd Engine**: for general SIMD operations. Basically a 8-core CPU, with 512-bit vector machine.
+ 
+ ### Systolic Arrays
++
+ Trainium chips are operated in systolic arrays, hence all data movements and computations are tiled. From the hardware perspective, the on-chip memories, SBUF and PSUM, are arranged as 2D memory arrays. The first dimension is the partition dimension `P` with `nki.tile_size.pmax = 128` memory partitions that can be read and written in parallel by compute engines. The second dimension is the free dimension `F` where elements are read and written sequentially.
+ 
+ <div class="row mt-3">
+@@ -49,26 +51,27 @@ Trainium chips are operated in systolic arrays, hence all data movements and com
+ </div>
+ 
+ ### `PSUM` Constraints
+-Remind that `PSUM` is the small, dedicated on-chip memory for matmul reduction operations. Currently, its size is `2MiB`. The hardware design poses a constraint for tiles in PSUM, `nki.tile_size.psum_fmax == 512`, which comes from `2MiB / 128 / 32B`. 
+ 
+-For matrix multiplicaion of size $(M, K) \times (K, N)$. The contraction dimension $K$  consider how matrix is mapped onto tensorE and PSUM. We define that input tiles F dimension size must not exceed `M_per_tile = nki.tile_size.gemm_stationary_fmax == 128` on the left-hand side (LHS), or `N_per_tile = nki.tile_size.gemm_moving_fmax == 512` on the right hand size (RHS). More explanation in [Tensor Engine: Matrix Multiplication](#tensor-engine-matrix-multiplication).
++Remind that `PSUM` is the small, dedicated on-chip memory for matmul reduction operations. Currently, its size is `2MiB`. The hardware design poses a constraint for tiles in PSUM, `nki.tile_size.psum_fmax == 512`, which comes from `2MiB / 128 / 32B`.
+ 
++For matrix multiplicaion of size $(M, K) \times (K, N)$. The contraction dimension $K$ consider how matrix is mapped onto tensorE and PSUM. We define that input tiles F dimension size must not exceed `M_per_tile = nki.tile_size.gemm_stationary_fmax == 128` on the left-hand side (LHS), or `N_per_tile = nki.tile_size.gemm_moving_fmax == 512` on the right hand size (RHS). More explanation in [Tensor Engine: Matrix Multiplication](#tensor-engine-matrix-multiplication).
+ 
+ ## NKI (Neuron Kernel Interface)
++
+ NKI kernels are written in Python. Essentially, NKI programming and some optimization considerations are
+ 
+ 1. Loading data from HBM to on-chip SBUF
+ 
+-    - How to minimize the data movement.
+-    - How to do data tiling so that we can fully use the 128 lane.
++   - How to minimize the data movement.
++   - How to do data tiling so that we can fully use the 128 lane.
+ 
+ 2. Computations on the compute engines
+ 
+-    - How to overlap computations on different cores. 
++   - How to overlap computations on different cores.
+ 
+ 3. Storing outputs from SBUF back to HBM
+ 
+-Each NKI kernel is a python function decorated with `@nki.jit`, and the arguments should be tensors already reside in HBM. NKI kernels can be directly inserted into ML frameworks (PyTorch, Tensorflow). 
++Each NKI kernel is a python function decorated with `@nki.jit`, and the arguments should be tensors already reside in HBM. NKI kernels can be directly inserted into ML frameworks (PyTorch, Tensorflow).
+ 
+ ```py
+ @nki.jit
+@@ -76,7 +79,7 @@ def vector_add(a_vec: Tensor, b_vec: Tensor) -> Tensor:
+     # Allocate space for the output vector in HBM
+     out = nl.ndarray(shape=a_vec.shape, dtype=a_vec.dtype, buffer=nl.hbm)
+ 
+-    # Load the input vectors from HBM into variables stored in SBUF 
++    # Load the input vectors from HBM into variables stored in SBUF
+     a = nl.load(a_vec)
+     b = nl.load(b_vec)
+ 
+@@ -89,7 +92,7 @@ def vector_add(a_vec: Tensor, b_vec: Tensor) -> Tensor:
+     return out
+ ```
+ 
+-NKI provides a `nki.baremetal` decorator function to directly run kernels from numpy arrays. 
++NKI provides a `nki.baremetal` decorator function to directly run kernels from numpy arrays.
+ 
+ ```py
+ vec_size = nki.tile_size.pmax # 128
+@@ -103,17 +106,17 @@ out = nki.baremetal(vector_add)(a, b)
+ The on-chip memories, SBUF and PSUM, store data that is arranged as 2D memory arrays. The first dimension of the 2D array is called the "partition dimension" P. The second dimension is referred to as the "free dimension" F (more details later). For vector add, we have `P = vec_size, F = 1`
+ 
+ ### Partition Dimension
+-Note that if we run the above code with `vec_size > 128`, we get 
++
++Note that if we run the above code with `vec_size > 128`, we get
+ 
+ ```
+ > a = nl.load(a_vec)
+ 
+-Value Error: number of partition in src[12800, 1] of 'load' 
++Value Error: number of partition in src[12800, 1] of 'load'
+ exceed architecture limitation of 128.
+ ```
+ 
+-
+-NeuronCores loads 128 elements in parallel along the P-dim in each cycle, which means the max size of P dimension for each `nl.load` is 128. Therefore, we need to manually tile of data into 128 chunks. 
++NeuronCores loads 128 elements in parallel along the P-dim in each cycle, which means the max size of P dimension for each `nl.load` is 128. Therefore, we need to manually tile of data into 128 chunks.
+ 
+ ```py
+ @nki.jit
+@@ -131,19 +134,20 @@ def vector_add_tiled(a_vec, b_vec):
+         # Allocate row-chunk sized tiles for the input vectors
+         a_tile = nl.ndarray((CHUNK_SIZE, 1), dtype=a_vec.dtype, buffer=nl.sbuf)
+         b_tile = nl.ndarray((CHUNK_SIZE, 1), dtype=b_vec.dtype, buffer=nl.sbuf)
+-        
++
+         # Load a chunk of rows
+         a_tile[...] = nl.load(a_vec[m * CHUNK_SIZE : (m + 1) * CHUNK_SIZE])
+         b_tile[...] = nl.load(b_vec[m * CHUNK_SIZE : (m + 1) * CHUNK_SIZE])
+ 
+         res = nl.add(a_tile, b_tile)
+         nl.store(out[m * CHUNK_SIZE : (m + 1) * CHUNK_SIZE], value=res)
+-    
++
+     return out
+ ```
+ 
+ ### Free Dimension
+-The compiler is responsible the `store` and `load` are converted into direct memory access (DMA) instructions. Similar to how CUDA hides the data loading to threads, NeuronCore has 16 DMA engines to move multiple lanes of data in parallel / in pipeline. DMA are parallelized over the free dimension. In addition, the computation engines support pipelining over the free dimension. 
++
++The compiler is responsible the `store` and `load` are converted into direct memory access (DMA) instructions. Similar to how CUDA hides the data loading to threads, NeuronCore has 16 DMA engines to move multiple lanes of data in parallel / in pipeline. DMA are parallelized over the free dimension. In addition, the computation engines support pipelining over the free dimension.
+ 
+ ```py
+ @nki.jit
+@@ -162,7 +166,7 @@ def vector_add_stream(a_vec, b_vec):
+     # Get the total number of vector rows
+     M = a_vec.shape[0]
+ 
+-    
++
+     # Reshape the the input vectors
+     a_vec_re = a_vec.reshape((M // TILE_M, PARTITION_DIM, FREE_DIM))
+     b_vec_re = b_vec.reshape((M // TILE_M, PARTITION_DIM, FREE_DIM))
+@@ -194,9 +198,10 @@ def vector_add_stream(a_vec, b_vec):
+ ```
+ 
+ ### Data Movement and Computation
+-F-dim is a tunable parameter, each DMA transfer has an overhead. However, F-dim is not always a "bigger means better" thing. Choosing a smaller F-dim may allow a better pipelining. In this case, since `add` requires small computation cycles, smaller free-dim means more but quicker data movement, and allow for more overlapping between the engines. In practice, we need to profile and decide the dimension size to harness better performance. 
+ 
+-## Tensor Engine: Matrix Multiplication 
++F-dim is a tunable parameter, each DMA transfer has an overhead. However, F-dim is not always a "bigger means better" thing. Choosing a smaller F-dim may allow a better pipelining. In this case, since `add` requires small computation cycles, smaller free-dim means more but quicker data movement, and allow for more overlapping between the engines. In practice, we need to profile and decide the dimension size to harness better performance.
++
++## Tensor Engine: Matrix Multiplication
+ 
+ <div class="row mt-3">
+     <div class="col-lg mt-3 mt-md-0">
+@@ -206,9 +211,9 @@ F-dim is a tunable parameter, each DMA transfer has an overhead. However, F-dim
+ 
+ Consider the matmul, note that the hardware constrains that PSUM can only hold $128\times 512$ elements. Thus, `TILE_M = nki.tile_size.gemm_stationary_fmax == 128`, `TILE_N = nki.tile_size.gemm_moving_fmax == 512`. In addition, the contraction dimension $K$ has to be loaded in parallel and do element-wise multiplication, thus `TILE_K = nki.tile_size.pmax = 128`.
+ 
+-Similar to any parallel programming architecture, data locality (reducing data loading) is a key optimization. Check [Matrix Multiplications notes](/csg/csc367/matrix.html#blocked-tiled-matrix-multiplication). Reordering loop (`nkm` instead `mnk` to avoid reloading lhs elements) and blocked matmul apply to our case. 
++Similar to any parallel programming architecture, data locality (reducing data loading) is a key optimization. Check [Matrix Multiplications notes](/csg/csc367/matrix.html#blocked-tiled-matrix-multiplication). Reordering loop (`nkm` instead `mnk` to avoid reloading lhs elements) and blocked matmul apply to our case.
+ 
+-For trainium, `SBUF` is `24MiB`. Assuming that we know the dtype and the rough shape of matrices (so that we can better choose number of tiles per block), we can compute the number of blocks s.t. data movement is minimized. 
++For trainium, `SBUF` is `24MiB`. Assuming that we know the dtype and the rough shape of matrices (so that we can better choose number of tiles per block), we can compute the number of blocks s.t. data movement is minimized.
+ 
+ {% details nki blocked matmul %}
+ 
+@@ -216,4 +221,4 @@ For trainium, `SBUF` is `24MiB`. Assuming that we know the dtype and the rough s
+ {% include_relative scripts/nki_matmul.py %}
+ {% endhighlight%}
+ 
+-{% enddetails %}
+\ No newline at end of file
++{% enddetails %}
+diff --git a/_notes/vllm_apc.md b/_notes/vllm_apc.md
+index 2c8066c..508f110 100644
+--- a/_notes/vllm_apc.md
++++ b/_notes/vllm_apc.md
+@@ -58,7 +58,6 @@ The key observation for caching: `K[i]` and `V[i]` at any layer depend on all to
+ 
+ Instead of allocating one contiguous KV cache per sequence, vLLM divides device memory into fixed-size **blocks** (like OS virtual memory pages). Each block stores KV data for a fixed number of tokens (`BLOCK_SIZE`, e.g., 16) for one attention head.
+ 
+-
+ ```
+ Flat KV Cache: [batch, num_kv_heads, context_size, head_size]
+ Block KV Cache: [num_blocks, num_kv_heads, block_size, head_size]
+@@ -80,22 +79,21 @@ Partition the KV cache into $B$ blocks, we get
+ 
+ $$o = \frac{1}{\sum_{b=1}^B\sum_{i\in b} \exp(s_i-m)}\sum_{b=1}^B\sum_{i\in b} \exp(s_i - m)v_i$$
+ 
+-
+-Consider $m_b$ to be the max score of the block, we keep track of nominator and denominator separatedly. 
++Consider $m_b$ to be the max score of the block, we keep track of nominator and denominator separatedly.
+ 
+ Since $\exp(a-b) = \exp(a) / \exp(b)$
+ 
+ $$u_B = \frac{1}{\exp(m_B)}\sum_{b=1}^B\sum_{i\in b} \exp(s_i)v_i, \quad m_B= \max(m_1, ..., m_b)$$
+ 
+-Now say we add a new block $B+1$, we get 
++Now say we add a new block $B+1$, we get
+ 
+ $$u_{B+1} = \frac{\exp(m_B)}{\exp(m_{B+1})}u_B + \frac{1}{\exp(m_{B+1})}\sum_{i\in {B+1}} \exp(s_i)v_i$$
+ 
+-And we get similar 
++And we get similar
+ 
+ $$l_{B+1} = \frac{\exp(m_B)}{\exp(m_{B+1})}l_B + \frac{1}{\exp(m_{B+1})}\sum_{i\in {B+1}} \exp(s_i)$$
+ 
+-Note that $m_{B+1} = \max(m_B, m_{b+1})$. Therefore, for each block accumulation, we only need to keep track of $m, u, l$, and rescale them in each iteration.  
++Note that $m_{B+1} = \max(m_B, m_{b+1})$. Therefore, for each block accumulation, we only need to keep track of $m, u, l$, and rescale them in each iteration.
+ 
+ ### Why Paged Attention Is More Efficient
+ 
+@@ -105,15 +103,12 @@ Since KV cache pages (blocks) can live at **arbitrary physical memory locations*
+ 
+ **Paged attention** allocates blocks on demand as the sequence grows. No pre-allocation, no wasted trailing space:
+ 
+-
+ ## [Automatic Prefix Caching (APC)](https://docs.vllm.ai/en/latest/design/prefix_caching/)
+ 
+ Many requests share common prefixes (system prompts, few-shot examples, shared document context). Without caching, vLLM recomputes the KV cache for these shared prefixes every time.
+ 
+-
+ APC caches **full KV cache blocks** and identifies them by a content-based hash. When a new request arrives, vLLM checks if any prefix blocks already exist in cache before allocating new ones.
+ 
+-
+ **What prefix caching skips**: Suppose positions 0–2 are a cached prefix and position 3 is new. The cached blocks already contain `K[0..2]` and `V[0..2]` at every layer. With prefix caching, we skip **all computation** for positions 0–2. The entire forward pass for those tokens is skipped. We only run the full transformer stack (attention + MLP, all layers) for position 3. When position 3 computes attention, it still reads `K[0..2]` and `V[0..2]` from the cached blocks — that data is already there in device memory.
+ 
+ ### Block Identification
+@@ -128,9 +123,9 @@ Only **full blocks** (completely filled with `BLOCK_SIZE` tokens) are cached.
+ 
+ 2. **`allocate_slots()`**:
+ 
+-    - "Touch" cached blocks: increment `ref_cnt`, remove from free queue (prevents eviction)
+-    - Allocate new blocks from the free queue head for the remaining tokens
+-    - Immediately cache any newly allocated block that becomes full
++   - "Touch" cached blocks: increment `ref_cnt`, remove from free queue (prevents eviction)
++   - Allocate new blocks from the free queue head for the remaining tokens
++   - Immediately cache any newly allocated block that becomes full
+ 
+ ### Eviction Policy (LRU)
+ 
+@@ -154,4 +149,3 @@ Block 1: hash(parent=Block0, "the rug__") → not full yet, allocate new block
+ ```
+ 
+ Request B skips prefill computation for the first 4 tokens entirely.
+-
+diff --git a/_pages/about.md b/_pages/about.md
+index ae85652..bd1ea65 100644
+--- a/_pages/about.md
++++ b/_pages/about.md
+@@ -15,10 +15,9 @@ latest_posts:
+ 
+ cv_pdf: /assets/pdf/cv.pdf # you can also use external links here
+ cv_format: jsonresume # options: rendercv, jsonresume
+-
+ ---
+ 
+-I'm skillful and passionate in developing new innovations and real-world solutions for parallel computing applications in machine learning and 3D graphics. 
++I'm skillful and passionate in developing new innovations and real-world solutions for parallel computing applications in machine learning and 3D graphics.
+ 
+ Currently, I'm a ML compiler engineer who works on accelerating and optimizing GenAI models on cutting-edge ML chips. Previously, I completed my Master of Engineering in EECS at UC Berkeley, where I worked on large-scale scene reconstructions, supervised by Prof. Avideh Zakhor, and I obtained my Bachelor of Science degree at U of Toronto, with a focus on artificial intelligence and computer vision.
+ 
+@@ -396,4 +395,5 @@ Currently, I'm a ML compiler engineer who works on accelerating and optimizing G
+     {% else %}
+     <p>No CV data found. Please configure either RenderCV (cv.yml) or JSONResume (resume.json) data.</p>
+     {% endif %}
+-</div>
+\ No newline at end of file
++
++</div>
+diff --git a/_pages/notebook.md b/_pages/notebook.md
+index 22d4848..c55ee87 100644
+--- a/_pages/notebook.md
++++ b/_pages/notebook.md
+@@ -148,4 +148,4 @@ pagination:
+   {% include pagination.liquid %}
+   {% endif %}
+ 
+-</div> -->
+\ No newline at end of file
++</div> -->
+diff --git a/_pages/repositories.md b/_pages/repositories.md
+index 2ab90d5..fabe52b 100644
+--- a/_pages/repositories.md
++++ b/_pages/repositories.md
+@@ -2,7 +2,7 @@
+ layout: page
+ permalink: /repositories/
+ title: Repositories
+-description: 
++description:
+ nav: true
+ nav_order: 2
+ ---
+diff --git a/_sass/_components.scss b/_sass/_components.scss
+index db8c78f..2da6cd1 100644
+--- a/_sass/_components.scss
++++ b/_sass/_components.scss
+@@ -123,7 +123,6 @@ ul.task-list input[type="checkbox"] {
+     border: 1px solid var(--global-divider-color);
+     box-shadow: none;
+ 
+-
+     .list-group-item {
+       background-color: inherit;
+       border-color: var(--global-divider-color);
+diff --git a/_sass/_themes.scss b/_sass/_themes.scss
+index 13fe8f9..ec7f290 100644
+--- a/_sass/_themes.scss
++++ b/_sass/_themes.scss
+@@ -71,7 +71,7 @@
+     height: v.$back-to-top-height;
+     width: v.$back-to-top-width;
+     z-index: v.$back-to-top-z-index;
+-    
++
+     svg {
+       margin: 8px auto 0;
+     }
+@@ -214,4 +214,4 @@ html[data-theme-setting="light"] {
+ mjx-container[jax="CHTML"][display="true"] {
+   overflow-x: auto;
+   overflow-y: hidden;
+-}
+\ No newline at end of file
++}
+diff --git a/assets/json/resume.json b/assets/json/resume.json
+index 95f8bfb..fc6d7b9 100644
+--- a/assets/json/resume.json
++++ b/assets/json/resume.json
+@@ -21,7 +21,7 @@
+       "endDate": "2024-08-01",
+       "summary": "Founding engineer, built end-to-end solutions for monocular camera 3D reconstruction.",
+       "highlights": [
+-        "Implemented CUDA algorithms for accelerating neural rendering and generative vision models.", 
++        "Implemented CUDA algorithms for accelerating neural rendering and generative vision models.",
+         "Researched on combining neural rendering and 3D generative AI for high-fidelity object reconstruction."
+       ]
+     },
+@@ -58,9 +58,7 @@
+       "startDate": "2017",
+       "endDate": "2022",
+       "score": "3.91/4.00",
+-      "highlights": [
+-        "Focused on 3D computer vision and robotics."
+-      ]
++      "highlights": ["Focused on 3D computer vision and robotics."]
+     }
+   ],
+   "teaching": [

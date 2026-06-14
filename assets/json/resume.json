@@ -21,7 +21,7 @@
       "endDate": "2024-08-01",
       "summary": "Founding engineer, built end-to-end solutions for monocular camera 3D reconstruction.",
       "highlights": [
-        "Implemented CUDA algorithms for accelerating neural rendering and generative vision models.", 
+        "Implemented CUDA algorithms for accelerating neural rendering and generative vision models.",
         "Researched on combining neural rendering and 3D generative AI for high-fidelity object reconstruction."
       ]
     },
@@ -58,9 +58,7 @@
       "startDate": "2017",
       "endDate": "2022",
       "score": "3.91/4.00",
-      "highlights": [
-        "Focused on 3D computer vision and robotics."
-      ]
+      "highlights": ["Focused on 3D computer vision and robotics."]
     }
   ],
   "teaching": [

@@ -58,7 +58,6 @@ The key observation for caching: `K[i]` and `V[i]` at any layer depend on all to
 
 Instead of allocating one contiguous KV cache per sequence, vLLM divides device memory into fixed-size **blocks** (like OS virtual memory pages). Each block stores KV data for a fixed number of tokens (`BLOCK_SIZE`, e.g., 16) for one attention head.
 
-
 ```
 Flat KV Cache: [batch, num_kv_heads, context_size, head_size]
 Block KV Cache: [num_blocks, num_kv_heads, block_size, head_size]
@@ -80,22 +79,21 @@ Partition the KV cache into $B$ blocks, we get
 
 $$o = \frac{1}{\sum_{b=1}^B\sum_{i\in b} \exp(s_i-m)}\sum_{b=1}^B\sum_{i\in b} \exp(s_i - m)v_i$$
 
-
-Consider $m_b$ to be the max score of the block, we keep track of nominator and denominator separatedly. 
+Consider $m_b$ to be the max score of the block, we keep track of nominator and denominator separatedly.
 
 Since $\exp(a-b) = \exp(a) / \exp(b)$
 
 $$u_B = \frac{1}{\exp(m_B)}\sum_{b=1}^B\sum_{i\in b} \exp(s_i)v_i, \quad m_B= \max(m_1, ..., m_b)$$
 
-Now say we add a new block $B+1$, we get 
+Now say we add a new block $B+1$, we get
 
 $$u_{B+1} = \frac{\exp(m_B)}{\exp(m_{B+1})}u_B + \frac{1}{\exp(m_{B+1})}\sum_{i\in {B+1}} \exp(s_i)v_i$$
 
-And we get similar 
+And we get similar
 
 $$l_{B+1} = \frac{\exp(m_B)}{\exp(m_{B+1})}l_B + \frac{1}{\exp(m_{B+1})}\sum_{i\in {B+1}} \exp(s_i)$$
 
-Note that $m_{B+1} = \max(m_B, m_{b+1})$. Therefore, for each block accumulation, we only need to keep track of $m, u, l$, and rescale them in each iteration.  
+Note that $m_{B+1} = \max(m_B, m_{b+1})$. Therefore, for each block accumulation, we only need to keep track of $m, u, l$, and rescale them in each iteration.
 
 ### Why Paged Attention Is More Efficient
 
@@ -105,14 +103,11 @@ Since KV cache pages (blocks) can live at **arbitrary physical memory locations*
 
 **Paged attention** allocates blocks on demand as the sequence grows. No pre-allocation, no wasted trailing space:
 
-
 ## [Automatic Prefix Caching (APC)](https://docs.vllm.ai/en/latest/design/prefix_caching/)
 
 Many requests share common prefixes (system prompts, few-shot examples, shared document context). Without caching, vLLM recomputes the KV cache for these shared prefixes every time.
 
-
 APC caches **full KV cache blocks** and identifies them by a content-based hash. When a new request arrives, vLLM checks if any prefix blocks already exist in cache before allocating new ones.
-
 
 **What prefix caching skips**: Suppose positions 0–2 are a cached prefix and position 3 is new. The cached blocks already contain `K[0..2]` and `V[0..2]` at every layer. With prefix caching, we skip **all computation** for positions 0–2. The entire forward pass for those tokens is skipped. We only run the full transformer stack (attention + MLP, all layers) for position 3. When position 3 computes attention, it still reads `K[0..2]` and `V[0..2]` from the cached blocks — that data is already there in device memory.
 
@@ -128,9 +123,9 @@ Only **full blocks** (completely filled with `BLOCK_SIZE` tokens) are cached.
 
 2. **`allocate_slots()`**:
 
-    - "Touch" cached blocks: increment `ref_cnt`, remove from free queue (prevents eviction)
-    - Allocate new blocks from the free queue head for the remaining tokens
-    - Immediately cache any newly allocated block that becomes full
+   - "Touch" cached blocks: increment `ref_cnt`, remove from free queue (prevents eviction)
+   - Allocate new blocks from the free queue head for the remaining tokens
+   - Immediately cache any newly allocated block that becomes full
 
 ### Eviction Policy (LRU)
 
@@ -154,4 +149,3 @@ Block 1: hash(parent=Block0, "the rug__") → not full yet, allocate new block
 ```
 
 Request B skips prefill computation for the first 4 tokens entirely.
-
