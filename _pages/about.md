@@ -15,10 +15,9 @@ latest_posts:
 
 cv_pdf: /assets/pdf/cv.pdf # you can also use external links here
 cv_format: jsonresume # options: rendercv, jsonresume
-
 ---
 
-I'm skillful and passionate in developing new innovations and real-world solutions for parallel computing applications in machine learning and 3D graphics. 
+I'm skillful and passionate in developing new innovations and real-world solutions for parallel computing applications in machine learning and 3D graphics.
 
 Currently, I'm a ML compiler engineer who works on accelerating and optimizing GenAI models on cutting-edge ML chips. Previously, I completed my Master of Engineering in EECS at UC Berkeley, where I worked on large-scale scene reconstructions, supervised by Prof. Avideh Zakhor, and I obtained my Bachelor of Science degree at U of Toronto, with a focus on artificial intelligence and computer vision.
 
@@ -396,4 +395,5 @@ Currently, I'm a ML compiler engineer who works on accelerating and optimizing G
     {% else %}
     <p>No CV data found. Please configure either RenderCV (cv.yml) or JSONResume (resume.json) data.</p>
     {% endif %}
+
 </div>

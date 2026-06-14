@@ -21,7 +21,7 @@
       "endDate": "2024-08-01",
       "summary": "Founding engineer, built end-to-end solutions for monocular camera 3D reconstruction.",
       "highlights": [
-        "Implemented CUDA algorithms for accelerating neural rendering and generative vision models.", 
+        "Implemented CUDA algorithms for accelerating neural rendering and generative vision models.",
         "Researched on combining neural rendering and 3D generative AI for high-fidelity object reconstruction."
       ]
     },
@@ -48,7 +48,10 @@
       "startDate": "2022",
       "endDate": "2023",
       "score": "3.93/4.00",
-      "highlights": ["Supervised by Avideh Zakhor on end-to-end drone systems for high quality indoor 3D reconstruction and measurements."]
+      "highlights": [
+        "Supervised by Avideh Zakhor", 
+        "Thesis: End-to-End Drone Systems for High Quality Indoor 3D Reconstruction and Measurements."
+      ]
     },
     {
       "institution": "University of Toronto",
@@ -58,9 +61,7 @@
       "startDate": "2017",
       "endDate": "2022",
       "score": "3.91/4.00",
-      "highlights": [
-        "Focused on 3D computer vision and robotics."
-      ]
+      "highlights": ["Focused on 3D computer vision and robotics."]
     }
   ],
   "teaching": [
