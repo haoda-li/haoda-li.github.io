@@ -132,6 +132,12 @@ ul.task-list input[type="checkbox"] {
         background-color: var(--global-theme-color) !important;
       }
     }
+
+  }
+
+  #experience + .card ul.list-group,
+  #education + .card ul.list-group {
+    list-style: none;
   }
 
   .card-title {
